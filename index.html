@@ -29,7 +29,7 @@
             <div><a href=""><img class="logo" src="images/logo.jpg" alt="logo"></a></div>
             <nav>
                 <ul>
-                    <li><i class="fa-solid fa-user"></i></li>
+                    <li><i class="fa-solid fa-user" data-bs-toggle="modal" data-bs-target="#loginModal"></i></li>
                     <li><i class="fa-solid fa-heart"></i></li>
                     <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
                     <li><i class="fa-solid fa-flag"></i></li>
@@ -49,7 +49,7 @@
                 <li><a>JORDAN</a></li>
             </ul>
         </div>
-        <!-- Modal -->
+        <!-- Modal For Search -->
 <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -82,6 +82,26 @@
       </div>
     </div>
   </div>
+  <!-- Modal For Login -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5"></div>
+                    <div class="col-lg-7">
+                        <img src="images/home/loginimage.png" class="m-auto d-block" alt="loginimage">
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
     </header>
     <main>
         <section class="home__page">
@@ -102,7 +122,8 @@
                 </div>
             </div>
 
-            <div class="products__section py-5">
+           <div class="px-4 px-lg-0">
+            <div class="products__section py-5 ">
                 <div class="owl__slider">
                     <div class="slider__heading">
                         New Releases
@@ -247,10 +268,11 @@
                     </div>
                 </div>
             </div>
+           </div>
 
         </section>
     </main>
-    <footer>
+    <footer class="px-4 px-lg-0">
         <div class="top__footer">
             <div class="container">
                 <div class="row">

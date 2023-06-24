@@ -496,6 +496,40 @@
   }
 }
 
+.delivery__page h1 {
+  font-family: Mulish;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 90px;
+  letter-spacing: -0.05em;
+  text-align: left;
+  margin: 20px 0px;
+  padding-left: 10px;
+}
+.delivery__page span {
+  font-family: Mulish;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0em;
+  font-weight: 800;
+  color: black;
+  display: block;
+  margin-bottom: 0.8rem !important;
+}
+.delivery__page p {
+  font-size: 18px;
+  line-height: 35px;
+  margin-bottom: 2.5rem;
+}
+.delivery__page h2 {
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 767px) {
+  .delivery__page h1 {
+    font-size: 40px;
+  }
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -631,7 +665,7 @@ footer .bottom__footer ul li a:hover {
 }
 .one__touch .inner__div {
   max-width: 800px;
-  margin: 0px auto 60px;
+  margin: 0px auto;
   padding: 80px 0px;
 }
 .one__touch .inner__div h3 {
@@ -706,18 +740,18 @@ footer .bottom__footer ul li a:hover {
   }
 }
 
-#searchModal {
+#searchModal, #loginModal {
   background-color: rgba(255, 255, 255, 0.57);
 }
-#searchModal .modal-dialog {
+#searchModal .modal-dialog, #loginModal .modal-dialog {
   max-width: 100%;
   margin: 0;
 }
-#searchModal .modal-dialog .modal-body {
+#searchModal .modal-dialog .modal-body, #loginModal .modal-dialog .modal-body {
   min-height: 400px;
   background-color: #000;
 }
-#searchModal .modal-dialog .modal-body .btn-close {
+#searchModal .modal-dialog .modal-body .btn-close, #loginModal .modal-dialog .modal-body .btn-close {
   position: absolute;
   right: 20px;
   top: 20px;
@@ -725,17 +759,17 @@ footer .bottom__footer ul li a:hover {
   background-image: none;
   opacity: 1;
 }
-#searchModal .modal-dialog .modal-body .logo {
+#searchModal .modal-dialog .modal-body .logo, #loginModal .modal-dialog .modal-body .logo {
   width: 90px;
 }
-#searchModal .modal-dialog .modal-body .input__wrapper {
+#searchModal .modal-dialog .modal-body .input__wrapper, #loginModal .modal-dialog .modal-body .input__wrapper {
   position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
 }
-#searchModal .modal-dialog .modal-body .input__wrapper input {
+#searchModal .modal-dialog .modal-body .input__wrapper input, #loginModal .modal-dialog .modal-body .input__wrapper input {
   margin: auto;
   border-radius: 15px;
   height: 60px;
@@ -748,26 +782,26 @@ footer .bottom__footer ul li a:hover {
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
 }
-#searchModal .modal-dialog .modal-body p {
+#searchModal .modal-dialog .modal-body p, #loginModal .modal-dialog .modal-body p {
   text-transform: capitalize;
   text-align: center;
   color: #fff;
   margin: 0.6rem 0px 1rem;
 }
-#searchModal .modal-dialog .modal-body p:first-child {
+#searchModal .modal-dialog .modal-body p:first-child, #loginModal .modal-dialog .modal-body p:first-child {
   color: #e8e8e8;
 }
-#searchModal .modal-dialog .modal-body .top__search {
+#searchModal .modal-dialog .modal-body .top__search, #loginModal .modal-dialog .modal-body .top__search {
   max-width: 500px;
   margin: auto;
   padding: 3rem 0rem 5rem;
 }
-#searchModal .modal-dialog .modal-body .top__search .suggested__list {
+#searchModal .modal-dialog .modal-body .top__search .suggested__list, #loginModal .modal-dialog .modal-body .top__search .suggested__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 1.2rem;
 }
-#searchModal .modal-dialog .modal-body .top__search .suggested__list div {
+#searchModal .modal-dialog .modal-body .top__search .suggested__list div, #loginModal .modal-dialog .modal-body .top__search .suggested__list div {
   text-align: center;
   color: #fff;
   font-weight: 500;
@@ -808,7 +842,7 @@ footer .bottom__footer ul li a:hover {
   font-size: 15px;
 }
 .p__card img {
-  width: 300px;
+  width: 300px !important;
   padding: 20px 0px;
 }
 .p__card .p__name {
