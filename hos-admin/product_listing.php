@@ -115,7 +115,7 @@ include('include/config.php');
 														<td>
 														<?php echo $data['category'] ?>
 														</td>
-								 <td><a href="category_update.php?id=<?php echo $data['id']; ?>" class="btn btn-info"><i class="fa-solid fa-eye"></i></td>
+								 <td><a href="javascript:void(0)" class="btn btn-info"><i class="fa-solid fa-eye"></i></td>
 								 <td><a href="product_update.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></td>                                   
                                  <td><a class="btn btn-danger" href="javascript:void(0)" onclick="trashProduct(<?php echo $data['id']; ?>)"><i class="fas fa-trash-alt"></i></a></td>
 													</tr>
