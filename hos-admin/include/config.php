@@ -1,5 +1,5 @@
 <?php
-echo $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 if(strpos($actual_link, 'localhost')) {
 	$db_host="localhost"; 
 	$db_user="root";
