@@ -20,5 +20,6 @@ try
 catch(PDOEXCEPTION $e)
 {
 	$e->getMessage();
+	echo "not connected";
 }
 ?>
