@@ -78,16 +78,39 @@ include('include/config.php');
                                 if (!empty($data)) {
                                 foreach ($data as $data)
 								{
+
+									$image_id = $data['img_id'];
+					// echo "<pre>";
+					// print_r($row);
+					// echo "</pre>";
+
+					if(!empty($image_id)){
+						$image_id=$image_id;
+						//$post_image="https://druggist.b-cdn.net/".$post_data_image['path'];
+					}else{
+						  $image_id=1;
+					}
+					// for image get
+					$select_stmtPost_img=$conn->prepare("SELECT * FROM images WHERE id='".$image_id."'");
+					$select_stmtPost_img->execute();
+					$post_data_image=$select_stmtPost_img->fetch(PDO::FETCH_ASSOC);
+					if(!empty($post_data_image['path'])){
+						$image=$post_data_image['path'];
+						$alt=$post_data_image['alt'];
+						}else{
+						$image="https://i.ibb.co/4fz1F7f/Getty-Images-974371976.jpg";
+						}
+
 ?>
 													<tr class="odd">
 														<td class="sorting_1 dtr-control" tabindex="0">
 															<?php echo $i; ?>
 														</td>
-														<td><img src="<?php echo $data['image'] ?>" class="custome_img"></td>
-														<td><?php echo $data['name'] ?>
+														<td><img src="<?php echo $image ?>" class="custome_img"></td>
+														<td><?php echo $data['product_name'] ?>
 														</td>
 														<td>
-															<?php echo $data['price'] ?>
+															<?php echo $data['prc'] ?>
 														</td>
 														<td>
 														<?php echo $data['category'] ?>
