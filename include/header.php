@@ -89,9 +89,45 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></button>
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-5"></div>
-                                <div class="col-lg-7">
+                                <div class="col-lg-5 order-1 order-lg-0">
+                                    <div class="form__section">
+                                        <form action="">
+                                            <h5>Welcome !</h5>
+                                            <span>Sign in to House of Sneakers</span>
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <label for="username">Username</label>
+                                                    <input id="username" type="text" placeholder="Username">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="password">Password</label>
+                                                    <input id="password" type="text" placeholder="Password">
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="check__div d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex flex-row-reverse align-items-center gap-2">
+                                                        <label for="check">Remember Me</label>
+                                                        <input id="check" type="checkbox">
+                                                        </div>
+                                                        <a href="">
+                                                            Forgot Password ?
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div>
+                                                    <button>Login</button>
+                                                    <p class="text-black-50">Don’y have an Account ? <a href=""><strong>Register</strong></a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 order-0 order-lg-1">
+                                    <div class="d-flex align-align-items-center h-100">
                                     <img src="images/home/loginimage.png" class="m-auto d-block" alt="loginimage">
+                                    </div>
                                 </div>
                             </div>
                         </div>

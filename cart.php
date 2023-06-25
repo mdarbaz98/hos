@@ -121,6 +121,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="bg-white usps">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4"><div class="py-3">
+                                <h3>Authenticity guarantee</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis neque cupiditate.</p>
+                            </div></div>
+                            <div class="col-lg-4"><div class="py-3">
+                                <h3>Authenticity guarantee</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis neque cupiditate.</p>
+                            </div></div>
+                            <div class="col-lg-4"><div class="py-3">
+                                <h3>Authenticity guarantee</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis neque cupiditate.</p>
+                            </div></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="one__touch">
                     <div class="inner__div">
                         <h3>

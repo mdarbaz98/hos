@@ -482,6 +482,16 @@
   text-align: left;
   color: #fff;
 }
+.cart__page .black__section .usps {
+  color: #a5a5a5;
+}
+.cart__page .black__section .usps h3 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.cart__page .black__section .usps p {
+  margin-bottom: 0px;
+}
 .cart__page .black__section .one__touch .inner__div {
   margin: 0px auto;
 }
@@ -805,6 +815,53 @@ footer .bottom__footer ul li a:hover {
   text-align: center;
   color: #fff;
   font-weight: 500;
+}
+
+#loginModal .modal-body {
+  padding: 6rem 1rem;
+}
+#loginModal .modal-body form {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+#loginModal .modal-body form label {
+  font-weight: 600;
+  line-height: 40px;
+  font-family: Mulish;
+}
+#loginModal .modal-body form input {
+  width: 100%;
+  height: 55px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: solid 1px #787878;
+}
+#loginModal .modal-body form .check__div label {
+  font-weight: 400;
+}
+#loginModal .modal-body form .check__div input {
+  width: 16px;
+}
+#loginModal .modal-body form button {
+  height: 55px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  margin: 30px 0px;
+}
+@media (max-width: 767px) {
+  #loginModal img {
+    width: 100%;
+    padding-bottom: 2rem;
+  }
 }
 
 .slider__heading {
