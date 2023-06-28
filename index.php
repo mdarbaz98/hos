@@ -1,4 +1,7 @@
-<?php include("./include/header.php") ?>
+
+<?php 
+include('hos-admin/include/config.php');
+include("./include/header.php") ?>
 <section class="home__page">
     <div class="banner__section">
         <div class="banner-carousel owl-carousel">
@@ -24,20 +27,42 @@
                     New Releases
                 </div>
                 <div class="P__1 p__carousel owl-carousel">
+
+                	 <?php
+                 $product=$conn->prepare("SELECT * FROM product order by id desc limit 8");
+                 $product->execute();
+                 $i=0;
+                    while ($row = $product->fetch(PDO::FETCH_ASSOC)){
+                        
+                       // for image                    
+                    $stmt_img = $conn->prepare("SELECT * FROM `images` WHERE status=1 AND id=?");
+					$stmt_img->execute([$row['img_id']]);
+					$img_data = $stmt_img->fetchAll(PDO::FETCH_ASSOC);
+					if(!empty($img_data)) {
+						$image = $img_data[0]['path']; 
+						$alt = $img_data[0]['alt'];
+					}else{
+                        $image="Not Found";
+						$alt="Not Found";
+						}
+                ?>	    
                     <div class="p__card">
                         <i class="wishlist fa-regular fa-heart"></i>
                         <img src="images/home/faa37359b4191648cfde90b4a7fc6cb2.png" alt="">
                         <div class="p__name">Jordan</div>
                         <div class="P__desc">
-                            Air Jordan 1 WMNS
+                            <?php echo $row['product_name'] ?>
                         </div>
                         <div class="p__cat">
                             "Washed Pink"
                         </div>
                         <div class="p__price">
-                            $571
+                            $ <?php echo $row['prc'] ?>
                         </div>
                     </div>
+            <?php } ?>
+                        
+
                 </div>
             </div>
         </div>
