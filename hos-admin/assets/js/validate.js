@@ -11,6 +11,9 @@ $('#product_form').validate({
     color: {
       required: true,
     },
+    size: {
+      required: true,
+    },
     link: {
       required: true,
     },
@@ -57,6 +60,12 @@ $('#updateProduct').validate({
       required: true,
     },
     subcategory: {
+      required: true,
+    },
+    color: {
+      required: true,
+    },
+    size: {
       required: true,
     },
     img_id: {

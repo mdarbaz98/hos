@@ -1,4 +1,4 @@
-<?php
+ <?php
 include('include/header.php');
 include('include/sidenav.php');
 include('include/config.php');
@@ -79,10 +79,20 @@ include('include/config.php');
 										</div>
 									</div>
 
-									<div class="form-group">
-											<label for="horizontal-firstname-input" class="col-form-label">Color</label>
-											<input type="text" class="form-control" id="color" name="color" placeholder="Enter Product Color">
+
+									<div class="d-flex my-4">
+										<div class="form-group mx-3  w-100">
+											<label for="Title" class="form-label">Color</label>
+											<input type="text" class="form-control " id="color" name="color" placeholder="Enter Color">
+										</div>
+										<div class="form-group  w-100">
+											<label for="horizontal-firstname-input">Size</label>
+											<input type="text" class="form-control" id="size" name="size" placeholder="Enter Size">
+										</div>
 									</div>
+
+
+
 							</div>								
 				<div class="submit-btns clearfix d-flex">           
                 <input type="hidden" name="btn" value="addProduct">

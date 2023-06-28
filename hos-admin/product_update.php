@@ -108,9 +108,16 @@ include('include/config.php');
 									
 									</div>
 							</div>
-							<div class="form-group">
-											<label for="horizontal-firstname-input" class="col-form-label">Color</label>
-											<input type="text" class="form-control" value="<?php echo $row['product_color']; ?>" id="color" name="color">
+
+									<div class="d-flex my-4">
+										<div class="form-group mx-3  w-100">
+											<label for="Title" class="form-label">Color</label>
+											<input type="text" class="form-control " id="color" name="color" value="<?php echo $row['product_color']; ?>">
+										</div>
+										<div class="form-group  w-100">
+											<label for="horizontal-firstname-input">Size</label>
+											<input type="text" class="form-control" id="size" name="size" value="<?php echo $row['size']; ?>">
+										</div>
 									</div>
 						
 									
