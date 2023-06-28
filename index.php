@@ -48,13 +48,13 @@ include("./include/header.php") ?>
                 ?>	    
                     <div class="p__card">
                         <i class="wishlist fa-regular fa-heart"></i>
-                        <img src="images/home/faa37359b4191648cfde90b4a7fc6cb2.png" alt="">
-                        <div class="p__name">Jordan</div>
+                        <img src="http://admin.houseofsneakers.in/<?php echo $image ?>" alt="">
+                        <div class="p__name"><?php echo $row['product_name'] ?></div>
                         <div class="P__desc">
-                            <?php echo $row['product_name'] ?>
+                            <?php //echo $row['category'] ?>
                         </div>
                         <div class="p__cat">
-                            "Washed Pink"
+                            "<?php echo $row['category'] ?>""
                         </div>
                         <div class="p__price">
                             $ <?php echo $row['prc'] ?>
