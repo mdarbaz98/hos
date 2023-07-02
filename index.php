@@ -29,7 +29,7 @@ include("./include/header.php") ?>
                 <div class="P__1 p__carousel owl-carousel">
 
                 	 <?php
-                 $product=$conn->prepare("SELECT * FROM product order by id desc limit 8");
+                 $product=$conn->prepare("SELECT * FROM product  order by id ASC limit 8");
                  $product->execute();
                  $i=0;
                     while ($row = $product->fetch(PDO::FETCH_ASSOC)){
@@ -45,7 +45,7 @@ include("./include/header.php") ?>
                         $image="Not Found";
 						$alt="Not Found";
 						}
-                ?>	    
+                ?>	<a href="<?php echo $row['slug'] ?>">    
                     <div class="p__card">
                         <i class="wishlist fa-regular fa-heart"></i>
                         <img src="http://admin.houseofsneakers.in/<?php echo $image ?>" alt="">
@@ -54,12 +54,13 @@ include("./include/header.php") ?>
                             <?php //echo $row['category'] ?>
                         </div>
                         <div class="p__cat">
-                            "<?php echo $row['category'] ?>""
+                            "<?php echo $row['category'] ?>"
                         </div>
                         <div class="p__price">
                             $ <?php echo $row['prc'] ?>
                         </div>
                     </div>
+                    </a>
             <?php } ?>
                         
 
@@ -72,20 +73,45 @@ include("./include/header.php") ?>
                     New Releases
                 </div>
                 <div class="P__1 p__carousel owl-carousel">
+                    
+                
+                
+                <?php
+                 $product=$conn->prepare("SELECT * FROM product  order by id DESC limit 8");
+                 $product->execute();
+                 $i=0;
+                    while ($row = $product->fetch(PDO::FETCH_ASSOC)){
+                        
+                       // for image                    
+                    $stmt_img = $conn->prepare("SELECT * FROM `images` WHERE status=1 AND id=?");
+					$stmt_img->execute([$row['img_id']]);
+					$img_data = $stmt_img->fetchAll(PDO::FETCH_ASSOC);
+					if(!empty($img_data)) {
+						$image = $img_data[0]['path']; 
+						$alt = $img_data[0]['alt'];
+					}else{
+                        $image="Not Found";
+						$alt="Not Found";
+						}
+                ?>	   <a href="<?php echo $row['slug'] ?>">  
                     <div class="p__card">
                         <i class="wishlist fa-regular fa-heart"></i>
-                        <img src="images/home/faa37359b4191648cfde90b4a7fc6cb2.png" alt="">
-                        <div class="p__name">Jordan</div>
+                        <img src="http://admin.houseofsneakers.in/<?php echo $image ?>" alt="">
+                        <div class="p__name"><?php echo $row['product_name'] ?></div>
                         <div class="P__desc">
-                            Air Jordan 1 WMNS
+                            <?php //echo $row['category'] ?>
                         </div>
                         <div class="p__cat">
-                            "Washed Pink"
+                            "<?php echo $row['category'] ?>"
                         </div>
                         <div class="p__price">
-                            $571
+                            $ <?php echo $row['prc'] ?>
                         </div>
                     </div>
+                    </a>
+            <?php } ?>
+
+
                 </div>
             </div>
         </div>
@@ -95,20 +121,40 @@ include("./include/header.php") ?>
                     New Releases
                 </div>
                 <div class="P__1 p__carousel owl-carousel">
+                <?php
+                 $product=$conn->prepare("SELECT * FROM product WHERE category='jordan-1-high' order by id DESC");
+                 $product->execute();
+                 $i=0;
+                    while ($row = $product->fetch(PDO::FETCH_ASSOC)){
+                        
+                       // for image                    
+                    $stmt_img = $conn->prepare("SELECT * FROM `images` WHERE status=1 AND id=?");
+					$stmt_img->execute([$row['img_id']]);
+					$img_data = $stmt_img->fetchAll(PDO::FETCH_ASSOC);
+					if(!empty($img_data)) {
+						$image = $img_data[0]['path']; 
+						$alt = $img_data[0]['alt'];
+					}else{
+                        $image="Not Found";
+						$alt="Not Found";
+						}
+                ?>	    <a href="<?php echo $row['slug'] ?>"> 
                     <div class="p__card">
                         <i class="wishlist fa-regular fa-heart"></i>
-                        <img src="images/home/faa37359b4191648cfde90b4a7fc6cb2.png" alt="">
-                        <div class="p__name">Jordan</div>
+                        <img src="http://admin.houseofsneakers.in/<?php echo $image ?>" alt="">
+                        <div class="p__name"><?php echo $row['product_name'] ?></div>
                         <div class="P__desc">
-                            Air Jordan 1 WMNS
+                            <?php //echo $row['category'] ?>
                         </div>
                         <div class="p__cat">
-                            "Washed Pink"
+                            "<?php echo $row['category'] ?>"
                         </div>
                         <div class="p__price">
-                            $571
+                            $ <?php echo $row['prc'] ?>
                         </div>
                     </div>
+                    </a>
+            <?php } ?>
                 </div>
             </div>
         </div>
@@ -118,20 +164,40 @@ include("./include/header.php") ?>
                     New Releases
                 </div>
                 <div class="P__1 p__carousel owl-carousel">
+                <?php
+                 $product=$conn->prepare("SELECT * FROM product WHERE category='sb-dunk' order by id DESC");
+                 $product->execute();
+                 $i=0;
+                    while ($row = $product->fetch(PDO::FETCH_ASSOC)){
+                        
+                       // for image                    
+                    $stmt_img = $conn->prepare("SELECT * FROM `images` WHERE status=1 AND id=?");
+					$stmt_img->execute([$row['img_id']]);
+					$img_data = $stmt_img->fetchAll(PDO::FETCH_ASSOC);
+					if(!empty($img_data)) {
+						$image = $img_data[0]['path']; 
+						$alt = $img_data[0]['alt'];
+					}else{
+                        $image="Not Found";
+						$alt="Not Found";
+						}
+                ?>	<a href="<?php echo $row['slug'] ?>"> 
                     <div class="p__card">
                         <i class="wishlist fa-regular fa-heart"></i>
-                        <img src="images/home/faa37359b4191648cfde90b4a7fc6cb2.png" alt="">
-                        <div class="p__name">Jordan</div>
+                        <img src="http://admin.houseofsneakers.in/<?php echo $image ?>" alt="">
+                        <div class="p__name"><?php echo $row['product_name'] ?></div>
                         <div class="P__desc">
-                            Air Jordan 1 WMNS
+                            <?php //echo $row['category'] ?>
                         </div>
                         <div class="p__cat">
-                            "Washed Pink"
+                            "<?php echo $row['category'] ?>"
                         </div>
                         <div class="p__price">
-                            $571
+                            $ <?php echo $row['prc'] ?>
                         </div>
                     </div>
+                    </a>
+            <?php } ?>
                 </div>
             </div>
         </div>

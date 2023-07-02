@@ -1,4 +1,36 @@
-<?php include("./include/header.php") ?>
+<?php
+        include('hos-admin/include/config.php');
+        $product_slug = $_GET['slug'];
+        $product=$conn->prepare("SELECT * FROM product WHERE slug ='$product_slug'");
+        $product->execute();
+        while ($row = $product->fetch(PDO::FETCH_ASSOC)){
+
+            $product_name= $row['product_name'];
+            $category= $row['category'];
+            $description= $row['description'];
+            $price= $row['prc'];
+            $product_name= $row['product_name'];
+            $product_name= $row['product_name'];
+                // echo "<pre>";
+                // print_r($row);
+                // echo "</pre>";
+
+                $stmt_img = $conn->prepare("SELECT * FROM `images` WHERE status=1 AND id=?");
+                $stmt_img->execute([$row['img_id']]);
+                $img_data = $stmt_img->fetchAll(PDO::FETCH_ASSOC);
+                if(!empty($img_data)) {
+                    $image = $img_data[0]['path']; 
+                    $alt = $img_data[0]['alt'];
+                }else{
+                    $image="Not Found";
+                    $alt="Not Found";
+                    }
+        }
+
+
+
+
+    include("./include/header.php") ?>
 
         <section class="product__page">
             <div class="container-fluid">
@@ -8,15 +40,10 @@
                             <p><span>HOUSE OF SNEAKERS</span> | <span>HOUSE OF SNEAKERS</span> | <span>HOUSE OF SNEAKERS</span></p>
                         <div class="product_carousel">
                             <div class="product owl-carousel">
-                                <img src="images/home/p_img.png" alt="">
-                                <img src="images/home/p_img.png" alt="">
-                                <img src="images/home/p_img.png" alt="">
-                                <img src="images/home/p_img.png" alt="">
+                                <img src="http://admin.houseofsneakers.in/<?php echo $image ?>" alt="<?php echo $image ?>">
                             </div>
                         </div>
-                        <div class="desc">
-                            The Nike Dunk Low “White/Black” is ready for everyday wear with a refined design consisting of two wearable colors: black and white. A January 2021 release, the “White/Black” Dunk Low features a color block reminiscent of the Women’s Air Jordan 1 High “Twist,” a shoe the Dunk shares similar DNA with. Black leather appears on the forefoot, eyelets, collar, and heel. 
-                        </div>
+                        <div class="desc"><?php echo $description ?></div>
                         <a class="read_more" href="">READ MORE</a>
                         </div>
 
@@ -24,16 +51,16 @@
                     <div class="col-lg-4">
                         <div class="product_side_bar">
                             <div class="category">
-                                NIKE
+                                <?php echo $category ?>
                             </div>
                             <div class="name">
-                                Nike Dunk Low
+                                <?php $product_name; ?>
                             </div>
                             <div class="product_short_desc mb-3">
                                 “Panda- Black/ White”
                             </div>
                             <div class="price">
-                                INR <span>17999</span> & Up
+                                INR <span><?php echo $price ?></span> & Up
                             </div>
                             <div class="tag_line">
                                 Duties & Taxes included
@@ -141,20 +168,42 @@
                                 New Releases
                             </div>
                             <div class="P__1 p__carousel owl-carousel">
-                                <div class="p__card">
-                                    <i class="wishlist fa-regular fa-heart"></i>
-                                    <img src="images/home/faa37359b4191648cfde90b4a7fc6cb2.png" alt="">
-                                    <div class="p__name">Jordan</div>
-                                    <div class="P__desc">
-                                        Air Jordan 1 WMNS
-                                    </div>
-                                    <div class="p__cat">
-                                        "Washed Pink"
-                                    </div>
-                                    <div class="p__price">
-                                        $571
-                                    </div>
-                                </div>
+                                
+                            <?php
+                 $product=$conn->prepare("SELECT * FROM product WHERE category='$category' order by id ASC");
+                 $product->execute();
+                 $i=0;
+                    while ($row = $product->fetch(PDO::FETCH_ASSOC)){
+                        
+                       // for image                    
+                    $stmt_img = $conn->prepare("SELECT * FROM `images` WHERE status=1 AND id=?");
+					$stmt_img->execute([$row['img_id']]);
+					$img_data = $stmt_img->fetchAll(PDO::FETCH_ASSOC);
+					if(!empty($img_data)) {
+						$image = $img_data[0]['path']; 
+						$alt = $img_data[0]['alt'];
+					}else{
+                        $image="Not Found";
+						$alt="Not Found";
+						}
+                ?>	<a href="<?php echo $row['slug'] ?>">    
+                    <div class="p__card">
+                        <i class="wishlist fa-regular fa-heart"></i>
+                        <img src="http://admin.houseofsneakers.in/<?php echo $image ?>" alt="">
+                        <div class="p__name"><?php echo $row['product_name'] ?></div>
+                        <div class="P__desc">
+                            <?php //echo $row['category'] ?>
+                        </div>
+                        <div class="p__cat">
+                            "<?php echo $row['category'] ?>"
+                        </div>
+                        <div class="p__price">
+                            $ <?php echo $row['prc'] ?>
+                        </div>
+                    </div>
+                    </a>
+            <?php } ?>
+
                             </div>
                         </div>
                     </div>
