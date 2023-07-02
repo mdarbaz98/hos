@@ -44,7 +44,7 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
                 <div class="d-flex">
 
                     <div class="navbar-brand-box">
-                        <a href="index.html" class="logo logo-dark">
+                        <a href="/" class="logo logo-dark">
                             <span class="logo-sm">
                                 <img src="assets/images/logo.svg" alt="" height="22">
                             </span>
@@ -53,7 +53,7 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
                             </span>
                         </a>
 
-                        <a href="home.php" class="logo logo-light">
+                        <a href="/" class="logo logo-light">
                             <span class="logo-sm">
                                 <img src="assets/images/logo-light.svg" alt="" height="22">
                             </span>

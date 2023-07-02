@@ -60,7 +60,7 @@
                                 “Panda- Black/ White”
                             </div>
                             <div class="price">
-                                INR <span><?php echo $price ?></span> & Up
+                                INR <span> <?php echo $formattedPrice = number_format($price);?></span> & Up
                             </div>
                             <div class="tag_line">
                                 Duties & Taxes included
@@ -198,7 +198,7 @@
                             "<?php echo $row['category'] ?>"
                         </div>
                         <div class="p__price">
-                            $ <?php echo $row['prc'] ?>
+                            $ <?php echo $formattedPrice = number_format($price);?>
                         </div>
                     </div>
                     </a>

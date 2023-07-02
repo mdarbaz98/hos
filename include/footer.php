@@ -10,9 +10,9 @@
                 <div class="col-12 col-lg-4 mb-3 mb-lg-0">
                     <p class="foo__heading">Important Links:</p>
                     <ul>
-                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="about">ABOUT US</a></li>
                         <li><a href="">PARTNERS</a></li>
-                        <li><a href="">DELIVERY AND RETURNS</a></li>
+                        <li><a href="delivery">DELIVERY AND RETURNS</a></li>
                         <li><a href="">AUTHENTICITY</a></li>
                         <li><a href="">CAREERS</a></li>
                     </ul>

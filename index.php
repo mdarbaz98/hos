@@ -57,7 +57,7 @@ include("./include/header.php") ?>
                             "<?php echo $row['category'] ?>"
                         </div>
                         <div class="p__price">
-                            $ <?php echo $row['prc'] ?>
+                            $ <?php echo $formattedPrice = number_format($row['prc']);?>
                         </div>
                     </div>
                     </a>
@@ -105,7 +105,7 @@ include("./include/header.php") ?>
                             "<?php echo $row['category'] ?>"
                         </div>
                         <div class="p__price">
-                            $ <?php echo $row['prc'] ?>
+                            $ <?php echo $formattedPrice = number_format($row['prc']);?>
                         </div>
                     </div>
                     </a>
@@ -150,7 +150,7 @@ include("./include/header.php") ?>
                             "<?php echo $row['category'] ?>"
                         </div>
                         <div class="p__price">
-                            $ <?php echo $row['prc'] ?>
+                            $ <?php echo $formattedPrice = number_format($row['prc']);?>
                         </div>
                     </div>
                     </a>
@@ -193,7 +193,7 @@ include("./include/header.php") ?>
                             "<?php echo $row['category'] ?>"
                         </div>
                         <div class="p__price">
-                            $ <?php echo $row['prc'] ?>
+                            $  <?php echo $formattedPrice = number_format($row['prc']);?>
                         </div>
                     </div>
                     </a>

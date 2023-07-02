@@ -24,12 +24,12 @@
             <div>
                 <i class="fa-solid fa-magnifying-glass" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
             </div>
-            <div><a href=""><img class="logo" src="images/logo.jpg" alt="logo"></a></div>
+            <div><a href="/"><img class="logo" src="images/logo.jpg" alt="logo"></a></div>
             <nav>
                 <ul>
                     <li><i class="fa-solid fa-user" data-bs-toggle="modal" data-bs-target="#loginModal"></i></li>
                     <li><i class="fa-solid fa-heart"></i></li>
-                    <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
                     <li><i class="fa-solid fa-flag"></i></li>
                 </ul>
             </nav>
