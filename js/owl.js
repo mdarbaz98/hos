@@ -10,6 +10,7 @@ $('.p__carousel').owlCarousel({
     loop:true,
     margin:20,
     dots:true,
+    nav: true,
     responsiveClass:true,
     // items: 5,
         responsive: {
@@ -33,10 +34,3 @@ $('.product').owlCarousel({
     responsiveClass:true,
     items: 1,
 })
-
-var owlCarouselActive = document.getElementsByClassName("owl-item active");
- var first = owlCarouselActive[0]; //get first item
- var last = owlCarouselActive[owlCarouselActive.length - 1]; //get last item
-
- first.style.opacity = 0.8;
- last.style.opacity = 0.8;
