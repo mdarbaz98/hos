@@ -56,8 +56,13 @@ include("./include/header.php") ?>
                         <div class="p__cat">
                             "<?php echo $row['category'] ?>"
                         </div>
-                        <div class="p__price">
+                        <div class="price__part d-flex gap-3">
+                        <div class="p__price cross">
                             $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                        </div>
+                            <div class="p__price">
+                                $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                            </div>
                         </div>
                     </div>
                     </a>
@@ -104,8 +109,13 @@ include("./include/header.php") ?>
                         <div class="p__cat">
                             "<?php echo $row['category'] ?>"
                         </div>
-                        <div class="p__price">
+                        <div class="price__part d-flex gap-3">
+                        <div class="p__price cross">
                             $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                        </div>
+                            <div class="p__price">
+                                $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                            </div>
                         </div>
                     </div>
                     </a>
@@ -149,8 +159,13 @@ include("./include/header.php") ?>
                         <div class="p__cat">
                             "<?php echo $row['category'] ?>"
                         </div>
-                        <div class="p__price">
+                        <div class="price__part d-flex gap-3">
+                        <div class="p__price cross">
                             $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                        </div>
+                            <div class="p__price">
+                                $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                            </div>
                         </div>
                     </div>
                     </a>
@@ -192,8 +207,13 @@ include("./include/header.php") ?>
                         <div class="p__cat">
                             "<?php echo $row['category'] ?>"
                         </div>
-                        <div class="p__price">
-                            $  <?php echo $formattedPrice = number_format($row['prc']);?>
+                        <div class="price__part d-flex gap-3">
+                        <div class="p__price cross">
+                            $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                        </div>
+                            <div class="p__price">
+                                $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                            </div>
                         </div>
                     </div>
                     </a>

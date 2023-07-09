@@ -58,6 +58,19 @@ line-height: 22px;
 letter-spacing: 0.4000000059604645px;
 text-align: center;
 color: #131313;
+ &.cross{
+    position: relative;
+    &::before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    width: 100%;
+    height: 1.5px;
+    background: red;
+    transform: rotate(342deg);
+}
+ }
     }
     transition: all ease-in-out 300ms;
     -webkit-transition: all ease-in-out 300ms;
@@ -77,4 +90,13 @@ line-height: 18px;
 letter-spacing: 0em;
 text-align: center;
 padding: 6px;
+}
+
+.ellipses{
+    text-overflow: ellipsis;
+    height: 30px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }

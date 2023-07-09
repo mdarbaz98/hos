@@ -20,13 +20,23 @@
 
 <body>
     <header>
+    <ul class="side__bar d-lg-none">
+    <i class="fa-solid fa-xmark"></i>
+                    <li><i class="fa-solid fa-user" data-bs-toggle="modal" data-bs-target="#loginModal"></i>User</li>
+                    <li><i class="fa-solid fa-heart"></i>Wishlist</li>
+                    <li><a href="cart"><i class="fa-solid fa-cart-shopping"></i>Cart</a></li>
+                    <li><i class="fa-solid fa-flag"></i>Country</li>
+                </ul>
         <div class="top__header">
+
             <div>
-                <i class="fa-solid fa-magnifying-glass" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
+            <i class="fa-solid fa-bars-staggered d-lg-none" style="color: #ffffff;"></i>
+                <i class="fa-solid fa-magnifying-glass d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
             </div>
             <div><a href="/"><img class="logo" src="images/logo.jpg" alt="logo"></a></div>
             <nav>
-                <ul>
+            <i class="fa-solid fa-magnifying-glass d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
+                <ul class="d-none d-lg-flex">
                     <li><i class="fa-solid fa-user" data-bs-toggle="modal" data-bs-target="#loginModal"></i></li>
                     <li><i class="fa-solid fa-heart"></i></li>
                     <li><a href="cart"><i class="fa-solid fa-cart-shopping"></i></a></li>

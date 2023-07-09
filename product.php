@@ -43,8 +43,8 @@
                                 <img src="http://admin.houseofsneakers.in/<?php echo $image ?>" alt="<?php echo $image ?>">
                             </div>
                         </div>
-                        <div class="desc"><?php echo $description ?></div>
-                        <a class="read_more" href="">READ MORE</a>
+                        <div class="desc ellipses"><?php echo $description ?></div>
+                        <a class="read_more">READ MORE</a>
                         </div>
 
                     </div>
