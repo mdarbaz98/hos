@@ -90,8 +90,29 @@ function getAllimages() {
   })
 }
 
+var db_val = $('#setCTA_selectedpro').val();
+var db_array = db_array ? db_val.split(",") : [];
+console.log(db_array)
+var numberArray = db_array.map(Number);
+console.log(db_val)
+
+function setProduct_id(x){
+    var id = $(x).data('image');
+    if($(x).is(":checked")){
+        numberArray.push(id)    
+    } else {
+        numberArray.splice(numberArray.indexOf(id),1);
+    }
+    var pro_id = numberArray.join(",");
+     if(pro_id.charAt(0)==','){
+        pro_id=pro_id.substring(1);
+    }
+    $('.image_id').attr('value',pro_id)
+}
+
+
 // onclick change right panel image data
-function imageChahge(id, path) {
+function imageChahge(id, path) {                                                                                                                                                                                                                                                                                                                                                                                                                                           
   $.ajax({
     type: 'POST',
     url: 'upload.php',
@@ -103,7 +124,7 @@ function imageChahge(id, path) {
       $('#for_dynamicImage,#for_dynamicImage1,#for_dynamicImage2').html(data)
       //location.reload();
       // alert(data);
-      $('.image_id').attr('value', id)
+      //$('.image_id').attr('value', id)
       setImgAgain = path
       // $('.image_path').attr('src', path)
       // console.log($('.image_path').attr('src', path));
