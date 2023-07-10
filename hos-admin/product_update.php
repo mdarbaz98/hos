@@ -102,7 +102,6 @@ include('include/config.php');
 									<div class="blog-img-box mt-5" data-toggle="modal" data-target="#exampleModal"> <img src="https://spruko.com/demo/sash/sash/assets/plugins/fancyuploder/fancy_upload.png" alt="feature click image">
 										<h5>Set Feature Image</h5></div>
 										<input type="hidden" class="image_id" name="img_id" /> </div>
-										<img src="<?php echo $image ?>" alt="" style="width:130px">
 										<div class="float-right">
 											<div class="set_images text-center"> <img src="" alt="" class="image_path"> </div>
 										</div>
