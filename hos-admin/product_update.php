@@ -113,7 +113,7 @@ include('include/config.php');
 										        if(!empty($image_id)){ ?>
 										       <div class="row">
 										        <?php
-										        $image=$conn->prepare("SELECT * FROM `images` WHERE id in($img_id)");                               
+										        $image=$conn->prepare("SELECT * FROM `images` WHERE id in($image_id)");                               
                                                 $image->execute();
                                                 while($ctaimage_data = $image->fetch(PDO::FETCH_ASSOC)){
                                                 if ($ctaimage_data['id']==$front_img){
