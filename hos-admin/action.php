@@ -100,11 +100,18 @@ if($_POST['btn']=='deleteCategory_id'){
     }else{
       $img_id = $_POST['img_id'];
     }
+
+    if(empty($_POST['front_img'])){
+      $front_img = $_POST['old_front_img'];
+    }else{
+      $front_img = $_POST['front_img'];
+    }
+
     $slug = strtolower($name);
     $slug = str_replace(' ', '-', $slug);
     $slug = preg_replace('/[^A-Za-z0-9\-]/', '', $slug);
-    $stmt = $conn->prepare("UPDATE product SET img_id=?, product_name=?, prc=?, slug=?, category=?, description=?, product_color=?, size=? WHERE id=?");
-    if($stmt->execute([$img_id, $name, $prc, $slug, $cat, $desc, $color, $size, $product_id])){
+    $stmt = $conn->prepare("UPDATE product SET img_id=?, front_img=?, product_name=?, prc=?, slug=?, category=?, description=?, product_color=?, size=? WHERE id=?");
+    if($stmt->execute([$img_id, $front_img, $name, $prc, $slug, $cat, $desc, $color, $size, $product_id])){
       echo "updated";
     }
   }

@@ -31,6 +31,7 @@ include('include/config.php');
                 foreach($result as $row)
                 { 
 					$image_id = $row['img_id'];
+					$front_img = $row['front_img'];
 					// echo "<pre>";
 					// print_r($row);
 					// echo "</pre>";
@@ -107,6 +108,31 @@ include('include/config.php');
 										</div>
 									
 									</div>
+
+									<?php
+										        if(!empty($image_id)){ ?>
+										       <div class="row">
+										        <?php
+										        $image=$conn->prepare("SELECT * FROM `images` WHERE id in($img_id)");                               
+                                                $image->execute();
+                                                while($ctaimage_data = $image->fetch(PDO::FETCH_ASSOC)){
+                                                if ($ctaimage_data['id']==$front_img){
+                                                                $ctastatus = "checked";
+                                                            } else {
+                                                                $ctastatus = "";
+                                                            }
+                                                            
+                                                ?>
+                                               <div class="col-sm-4 edit_ctaClass">
+                                               <input type="radio" <?php echo $ctastatus ?> value="<?php echo $ctaimage_data['id'] ?>" name="front_img" id="<?php echo $ctaimage_data['id'] ?>" data-cta_id="<?php echo $ctaimage_data['id'] ?>" class="form-check-input">
+                                                <label for="<?php echo $ctaimage_data['id']; ?>">
+                                                 <img src="<?php echo $ctaimage_data['path']; ?>" alt="" class="image_path">
+										        </label>
+										        </div>
+										       <?php } ?>
+										       </div>
+										       <?php } ?>
+
 							</div>
 
 									<div class="d-flex my-4">
@@ -123,6 +149,7 @@ include('include/config.php');
 									
 				<div class="submit-btns clearfix d-flex">       
 				<input type="hidden" name="old_img_id" value="<?php echo $image_id ?>">    
+				<input type="hidden" name="old_front_img" value="<?php echo $front_img ?>">    
 				<input type="hidden" name="product_id" value="<?php echo $row['id'] ?>">
                 <input type="hidden" name="btn" value="updateProduct">
                 <input type="submit" class="post-btn float-left ml-4" name="blog_publish" value="Publish">
