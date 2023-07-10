@@ -41,10 +41,7 @@ include('include/config.php');
 								</div>
 
 								<div class="d-flex">
-									<div class="form-group  w-100">
-										<label for="horizontal-firstname-input" class="col-form-label">Price</label>
-										<input type="text" class="form-control" id="prc" name="prc" placeholder="Enter Price">
-									</div>
+									
 									<div class="form-group mx-3 w-100">
 									<label class="form-label"> Select Category </label>
 										<?php $stmt = $conn->prepare("SELECT * FROM `categories`");
@@ -61,6 +58,11 @@ include('include/config.php');
 													<?php } ?>
 											</select>
 									</div>
+
+									<div class="form-group mx-3 w-100">
+												<label>Color</label>
+												<input type="text" class="form-control" id="color" name="color" placeholder="Enter Color">
+											</div>
 								</div>
 
 							
@@ -69,25 +71,41 @@ include('include/config.php');
 										<label for="horizontal-firstname-input" class="col-form-label">Description</label>
 										<textarea name="description" class="form-control" id="" name="description" cols="15" rows="5"></textarea>
 								</div>
+										
 								
 									<div class="form-group w-100 m-5">
 									<div class="blog-img-box" data-toggle="modal" data-target="#exampleModal"> <img src="https://spruko.com/demo/sash/sash/assets/plugins/fancyuploder/fancy_upload.png" alt="feature click image">
 										<h5>Set Feature Image</h5> </div>
-										<input type="hidden" class="image_id" name="img_id" /> </div>
+										<input type="hidden" class="image_id" name="img_id"/> </div>
 										<div class="float-right">
 											<div class="set_images text-center"> <img src="" alt="" class="image_path"> </div>
 										</div>
 									</div>
 
-
-									<div class="d-flex my-4">
-										<div class="form-group mx-3  w-100">
-											<label for="Title" class="form-label">Color</label>
-											<input type="text" class="form-control " id="color" name="color" placeholder="Enter Color">
+									<div class="row" id="forAppend">
+										
+										<div class="col-sm-3">
+											<div class="form-group">
+											<label>Size</label>
+												<input type="text" class="form-control" id="size" name="size[]" placeholder="Enter Size">
+											</div>
 										</div>
-										<div class="form-group  w-100">
-											<label for="horizontal-firstname-input">Size</label>
-											<input type="text" class="form-control" id="size" name="size" placeholder="Enter Size">
+										<div class="col-sm-3">
+											<div class="form-group">
+											<label>Price</label>
+												<input type="text" class="form-control" id="price" name="price[]" placeholder="Enter Price">
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="form-group">
+												<label for="Title" class="form-label">Discount Price</label>
+												<input type="text" class="form-control " id="d_price" name="d_price[]" placeholder="Enter Discount Price">
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="submit-btn">
+												<input type="button" class="post-btn" value="Add More" onclick="appendProductsize()">
+                                            </div>
 										</div>
 									</div>
 

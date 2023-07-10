@@ -137,6 +137,45 @@ function imageChahge(id, path) {
   })
 }
 
+function appendProductsize(){
+  let counter=1;
+  var html_content=`
+  <div class="row" id=${'append_productSize_'+counter} >
+  <div class="col-sm-3">
+    <div class="form-group">
+      <label>Size</label>
+      <input type="text" class="form-control" id="size" name="size[]" placeholder="Enter Size">
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="form-group">
+      <label>Price</label>
+      <input type="text" class="form-control" id="price" name="price[]" placeholder="Enter Price">
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="form-group">
+    <label for="Title" class="form-label">Discount Price</label>
+    <input type="text" class="form-control " id="d_price" name="d_price[]" placeholder="Enter Discount Price">
+    </div>
+  </div>
+
+                          <div class="submit-btn">
+                            <input type="button" class="post-btn" value="Add More" onclick="appendProductsize()">
+                            <span class="post-btn" onclick="deleteSizeProduct(${counter})" style="background:#7e37d8;">Delete</span>                     
+                          </div>`;
+
+      $('#forAppend').append(html_content);
+      counter++;
+}
+function deleteSizeProduct(target){
+  const ele=document.getElementById('append_productSize_'+target)
+  ele.remove() 
+}
+
+
 const INPUT_FILE = document.querySelector('#upload-files')
 const INPUT_CONTAINER = document.querySelector('#upload-container')
 const FILES_LIST_CONTAINER = document.querySelector('#files-list-container')

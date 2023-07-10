@@ -3,26 +3,12 @@ $('#product_form').validate({
   rules: {
     pro_name: 'required',
     desc: 'required',
-    strn: { required: true },
-    prc: { required: true },
-    description: {
-      required: true,
-    },
-    color: {
-      required: true,
-    },
-    size: {
-      required: true,
-    },
-    link: {
-      required: true,
-    },
     category: {
       required: true,
     },
-    img_id: {
-      required: true,
-    },
+    // img_id: {
+    //   required: true,
+    // },
   },
   messages: {},
   submitHandler: function (form) {
@@ -37,7 +23,7 @@ $('#product_form').validate({
         console.log(data);
         if (data.includes("inserted")) {
           var id = data.substr(8);
-          window.location.href = "product_update.php?id=" + id + "&status=add";
+       //   window.location.href = "product_update.php?id=" + id + "&status=add";
         } else {
           alert("Enter Valid " + data);
           $('#' + data).focus();
@@ -52,25 +38,18 @@ $('#updateProduct').validate({
   rules: {
     pro_name: 'required',
     desc: 'required',
-    prc: { required: true },
-    disc: {
-      required: true,
-    },
     category: {
       required: true,
     },
-    subcategory: {
-      required: true,
-    },
-    color: {
-      required: true,
-    },
-    size: {
-      required: true,
-    },
-    img_id: {
-      required: true,
-    },
+    // color: {
+    //   required: true,
+    // },
+    // size: {
+    //   required: true,
+    // },
+    // img_id: {
+    //   required: true,
+    // },
   },
   messages: {},
   submitHandler: function (form) {

@@ -69,38 +69,46 @@ if($_POST['btn']=='deleteCategory_id'){
 //product
     if($_POST['btn']=='addProduct'){
     $name=$_POST['pro_name'];
-    $prc = $_POST['prc'];
     $cat = $_POST['category'];
     $description = $_POST['description']; 
     $img_id = $_POST['img_id'];
     $color = $_POST['color'];
-    $size = $_POST['size'];
     $PostDate = date("Y-m-d H:i");
     $slug = strtolower($name);
     $slug = str_replace(' ', '-', $slug);
     $slug = preg_replace('/[^A-Za-z0-9\-]/', '', $slug);
-    $stmt = $conn->prepare("INSERT INTO product(img_id, front_img, product_name, 
-    prc, disc_prc, slug, category, description, product_color, PostDate, status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
-    if($stmt->execute([$img_id, $img_id, $name, $prc, $prc, $slug, $cat, $description, $color, $size, $PostDate, 1])){
-        $last_pro_id = $conn->lastInsertId();
-        echo "inserted".$last_pro_id;
+    $stmt = $conn->prepare("INSERT INTO product(img_id, product_name, slug, category, description, product_color, PostDate, status) VALUES(?,?,?,?,?,?,?,?)");
+    if($stmt->execute([$img_id, $name, $slug, $cat, $description, $color, $PostDate, 1])){
+                $last_pro_id = $conn->lastInsertId();
+                $total_price = count($_POST['size']);
+                if(!empty($total_price)){    
+                for($i=0;$i<$total_price;$i++){ 
+                     $size = $_POST['size'][$i];
+                     $price =  $_POST['price'][$i];
+                     $d_price =  $_POST['d_price'][$i];
+                     $product_price = $conn->prepare("INSERT INTO product_price(product_id, size, price, d_price, status) VALUES(?,?,?,?,?)");
+                      if($product_price->execute([$last_pro_id, $size, $price, $d_price, 1])){
+                        
+                      }
+                }
+              }
+              echo "inserted".$last_pro_id;
+
+
     }
   }
 
   if($_POST['btn']=='updateProduct'){
     $product_id=$_POST['product_id'];
     $name = $_POST['pro_name'];
-    $prc = $_POST['prc'];
     $cat = $_POST['category'];
     $desc = $_POST['discription'];
     $color = $_POST['color'];
-    $size = $_POST['size'];
     if(empty($_POST['img_id'])){
       $img_id = $_POST['old_img_id'];
     }else{
       $img_id = $_POST['img_id'];
     }
-
     if(empty($_POST['front_img'])){
       $front_img = $_POST['old_front_img'];
     }else{
@@ -110,8 +118,23 @@ if($_POST['btn']=='deleteCategory_id'){
     $slug = strtolower($name);
     $slug = str_replace(' ', '-', $slug);
     $slug = preg_replace('/[^A-Za-z0-9\-]/', '', $slug);
-    $stmt = $conn->prepare("UPDATE product SET img_id=?, front_img=?, product_name=?, prc=?, slug=?, category=?, description=?, product_color=?, size=? WHERE id=?");
-    if($stmt->execute([$img_id, $front_img, $name, $prc, $slug, $cat, $desc, $color, $size, $product_id])){
+    $stmt = $conn->prepare("UPDATE product SET img_id=?, front_img=?, product_name=?, slug=?, category=?, description=?, product_color=? WHERE id=?");
+    if($stmt->execute([$img_id, $front_img, $name, $slug, $cat, $desc, $color, $product_id])){
+    
+      $total_price = count($_POST['size']);
+      if(!empty($total_price)){    
+      for($i=0;$i<$total_price;$i++){ 
+           $size = $_POST['size'][$i];
+           $price =  $_POST['price'][$i];
+           $d_price =  $_POST['d_price'][$i];
+           $product_price = $conn->prepare("INSERT INTO product_price(product_id, size, price, d_price, status) VALUES(?,?,?,?,?)");
+            if($product_price->execute([$product_id, $size, $price, $d_price, 1])){
+              
+            }
+      }
+    }
+
+     
       echo "updated";
     }
   }

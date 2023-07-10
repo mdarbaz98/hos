@@ -3,7 +3,7 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
 if(strpos($actual_link, 'localhost')) {
 	$db_host="localhost"; 
 	$db_user="root";
-	$db_name="hos_data";
+	$db_name="hos";
 	$db_password="";
 }else {
 	$db_host="localhost"; 

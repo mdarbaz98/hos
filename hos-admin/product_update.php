@@ -25,8 +25,9 @@ include('include/config.php');
 				<!-- end page title -->
 				<form id="updateProduct">
 				<?php 
+				$product_id = $_GET['id'];
                 $stmt= $conn->prepare("SELECT * FROM `product` WHERE id=?");                               
-                $stmt->execute([$_GET['id']]);
+                $stmt->execute([$product_id]);
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach($result as $row)
                 { 
@@ -69,10 +70,6 @@ include('include/config.php');
 										<input type="text" class="form-control" id="slug" name="slug" value="<?php echo $row['slug'] ?>"> </div>
 									</div>
 								<div class="d-flex my-4">
-									<div class="form-group  w-100">
-										<label for="horizontal-firstname-input" class="col-form-label">Price</label>
-										<input type="text" class="form-control" id="prc" name="prc" value="<?php echo $row['prc'] ?>">
-									</div>
 									<div class="form-group ml-3 w-100">
 										<label class="form-label"> Select Category </label>
 										<?php $stmt = $conn->prepare("SELECT * FROM `categories`");
@@ -89,6 +86,10 @@ include('include/config.php');
 													<?php } ?>
 											</select>
 									</div>
+									<div class="form-group mx-3 w-100">
+												<label>Color</label>
+												<input type="text" class="form-control" id="color" name="color" value="<?php echo $row['product_color'] ?>">
+											</div>
 									
 								</div>
 								
@@ -134,16 +135,75 @@ include('include/config.php');
 
 							</div>
 
-									<div class="d-flex my-4">
-										<div class="form-group mx-3  w-100">
-											<label for="Title" class="form-label">Color</label>
-											<input type="text" class="form-control " id="color" name="color" value="<?php echo $row['product_color']; ?>">
+									<div class="row" id="forAppend">
+									<div class="col-sm-3">
+											<div class="form-group">
+											<label>Size</label>
+												<input type="text" class="form-control" id="size" name="size[]" placeholder="Enter Size">
+											</div>
 										</div>
-										<div class="form-group  w-100">
-											<label for="horizontal-firstname-input">Size</label>
-											<input type="text" class="form-control" id="size" name="size" value="<?php echo $row['size']; ?>">
+										<div class="col-sm-3">
+											<div class="form-group">
+											<label>Price</label>
+												<input type="text" class="form-control" id="price" name="price[]" placeholder="Enter Price">
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="form-group">
+												<label for="Title" class="form-label">Discount Price</label>
+												<input type="text" class="form-control " id="d_price" name="d_price[]" placeholder="Enter Discount Price">
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="submit-btn">
+												<input type="button" class="post-btn" value="Add More" onclick="appendProductsize()">
+                                            </div>
 										</div>
 									</div>
+
+
+
+									<table id="datatable" class="table table-bordered">
+											<thead>
+												<tr role="row">
+													<th>Sr No</th>
+													<th>Size</th>
+													<th>Price</th>
+													<th>Discount Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<?php
+													 		$sql = "SELECT * FROM `product_price` WHERE product_id='$product_id';								";
+															$stmt = $conn->prepare($sql);
+															$stmt->execute();
+															$i=1;
+															$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+															if (!empty($data)) {
+															foreach ($data as $data)
+															{?>
+													<tr class="odd">
+														<td class="sorting_1 dtr-control" tabindex="0">
+															<?php echo $i; ?>
+														</td>
+														
+														<td><?php echo $data['size'] ?>
+														</td>
+														<td>
+															<?php echo $data['price'] ?>
+														</td>
+														<td>
+														<?php echo $data['d_price'] ?>
+														</td>
+													</tr>
+													<?php $i++; } }?>
+											</tbody>
+										</table>
+
+
+
+
+
 						
 									
 				<div class="submit-btns clearfix d-flex">       
