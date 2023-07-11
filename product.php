@@ -11,6 +11,12 @@
             $price= $row['prc'];
             $product_name= $row['product_name'];
             $product_name= $row['product_name'];
+
+            if($price>20000){
+                    $shipping_charge=0;
+            }else{
+                $shipping_charge=299;
+            }
                 // echo "<pre>";
                 // print_r($row);
                 // echo "</pre>";
@@ -40,7 +46,7 @@
                             <p><span>HOUSE OF SNEAKERS</span> | <span>HOUSE OF SNEAKERS</span> | <span>HOUSE OF SNEAKERS</span></p>
                         <div class="product_carousel">
                             <div class="product owl-carousel">
-                                <img src="http://admin.houseofsneakers.in/<?php echo $image ?>" alt="<?php echo $image ?>">
+                                <img src="https://admin.houseofsneakers.in/<?php echo $image ?>" alt="<?php echo $image ?>">
                             </div>
                         </div>
                         <div class="desc ellipses"><?php echo $description ?></div>
@@ -84,7 +90,8 @@
                                       </div>
                                     </div>
                             </div>
-                            <a class="add_to_cart" href="">ADD TO CART</a>
+                            <a class="add_to_cart" href="javascript:void(0)" id="setaddProductToCart" onclick="addProductToCart(this)" data-image="<?php echo $image ?>" data-name="<?php echo $product_name ?>"
+                            data-category="<?php echo $category ?>"data-price="<?php echo $price ?>" data-size="<?php echo 5.5 ?>" data-discounted_price="<?php echo $price ?>" data-shipping_charge="<?php echo $shipping_charge ?>"  >ADD TO CART</a>
                         </div>
                         <div class="view__line d-flex">
                             <span>🔥</span>

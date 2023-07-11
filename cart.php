@@ -6,9 +6,11 @@
                     <p class="page__heading">Shopping Cart</p>
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="tag__line">You have 3 item in your cart</p>
+                            <p class="tag__line">You have <span class="cart_total_product">0</span> item in your cart</p>
                             <div class="products__container">
-                                <div class="card_p">
+
+
+                                <!-- <div class="card_p">
                                     <div class="left__div">
                                         <img src="images/home/595a1b2f314685d0fdea8cbff8c72e5f.jpg" alt="">
                                         <div>
@@ -73,7 +75,8 @@
                                         </div>
                                         <i class="fa-regular fa-trash-can"></i>
                                     </div>
-                                </div>
+                                </div> -->
+                           
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -108,12 +111,12 @@
                                     </div>
                                     <hr>
                                     <ul>
-                                        <li><span>Subtotal</span><span>$1,072</span></li>
-                                        <li><span>Subtotal</span><span>$1,072</span></li>
-                                        <li><span>Subtotal</span><span>$1,072</span></li>
+                                        <li><span>Subtotal</span><span class="product_subtotal">0</span></li>
+                                        <li><span>Shipping</span><span class="product_shipping">0</span></li>
+                                        <li><span>Total</span><span class="final_total_amount">0</span></li>
                                     </ul>
                                     <div class="checkout__section">
-                                        <span>$1,076</span>
+                                        <span class="final_total_amount">0</span>
                                         <span>Checkout<i class="fa-solid fa-arrow-right-long ps-3"></i></span>
                                     </div>
                                 </form>

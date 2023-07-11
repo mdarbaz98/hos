@@ -1,6 +1,6 @@
 RewriteEngine On
 RewriteRule ^/?$ index.php [NC,L]
-RewriteRule ^delivery/([^/\.]+)/?$ deliveryandreturns.php [NC,L]
 RewriteRule ^cart/([^/\.]+)/?$ cart.php [NC,L]
 RewriteRule ^about/([^/\.]+)/?$ about.php [NC,L]
+RewriteRule ^delivery/([^/\.]+)/?$ deliveryandreturns.php [NC,L]
 RewriteRule ^([0-9a-zA_Z_-]+)$ product.php?slug=$1 [NC,L]

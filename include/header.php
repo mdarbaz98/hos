@@ -25,7 +25,7 @@
     <i class="fa-solid fa-xmark"></i>
                     <li><i class="fa-solid fa-user" data-bs-toggle="modal" data-bs-target="#loginModal"></i>User</li>
                     <li><i class="fa-solid fa-heart"></i>Wishlist</li>
-                    <li><a href="cart"><i class="fa-solid fa-cart-shopping"></i>Cart</a></li>
+                    <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i>Cart</a></li>
                     <li><i class="fa-solid fa-flag"></i>Country</li>
                 </ul>
         <div class="top__header">
