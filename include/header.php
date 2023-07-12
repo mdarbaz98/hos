@@ -1,3 +1,4 @@
+<?php $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]"; ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -16,7 +17,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="./css/style.css">
+
+    <?php
+      if(strpos($actual_link, 'localhost')) {
+    ?>
+      <base href="http://localhost/hos/">
+    <?php
+      }else {
+    ?>
+      <base href="<?php echo $actual_link; ?>">
+    <?php
+      }
+    ?>
+
+
     <base href="http://localhost/hos/">
+    <base href="https://admin.houseofsneakers.in">
+
+
 </head>
 
 <body>

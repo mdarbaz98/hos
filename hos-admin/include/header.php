@@ -51,6 +51,9 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
     } 
   }
     
+
+
+  
     ?>
 
  <link rel="shortcut icon" href="assets/images/favicon.ico">
