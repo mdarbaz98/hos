@@ -20,42 +20,6 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
     <?php
       }
     ?>
-    <?php
-    
-    setcookie("userID");
-  $id = uniqid();
-  if(!isset($_COOKIE["userID"])) {
-    setcookie("userID",$id,time()+31556926 ,'/');
-    $insertUser=$conn->prepare("INSERT INTO customer(userid, cookieUser) VALUE('".$id."', 'yes')");
-    $insertUser->execute();
-    echo '<script type="text/javascript">location.reload()</script>';
-  } else {
-    setcookie("userID",$_COOKIE["userID"],time()+31556926 ,'/');
-    $checkUser=$conn->prepare("SELECT * FROM customer WHERE userid='".$_COOKIE["userID"]."'");
-    $checkUser->execute();
-    $isUser = $checkUser->rowCount();
-    while($row=$checkUser->fetch(PDO::FETCH_ASSOC)){
-        $email = $row['email'];
-        $fname=$row['fname'];
-        $userid=$row['userid'];
-    }
-    if($email!=NULL){
-        $_SESSION['IS_LOGIN']=true;
-        $_SESSION['NAME']=$fname;
-        $_SESSION['EMAIL']=$email;
-        $_SESSION['USER_ID']=$userid;   
-    }
-    if($isUser==0){
-        $insertUser=$conn->prepare("INSERT INTO customer(userid, cookieUser) VALUE('".$_COOKIE['userID']."', 'yes')");
-        $insertUser->execute();
-    } 
-  }
-    
-
-
-  
-    ?>
-
  <link rel="shortcut icon" href="assets/images/favicon.ico">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/jquery.datetimepicker.min.css" />

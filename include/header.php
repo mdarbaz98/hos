@@ -28,12 +28,41 @@
       <base href="<?php echo $actual_link; ?>">
     <?php
       }
+
+
+
+
+      setcookie("userID");
+      $id = uniqid();
+      if(!isset($_COOKIE["userID"])) {
+        setcookie("userID",$id,time()+31556926 ,'/');
+        $insertUser=$conn->prepare("INSERT INTO customer(userid, cookieUser) VALUE('".$id."', 'yes')");
+        $insertUser->execute();
+        echo '<script type="text/javascript">location.reload()</script>';
+      } else {
+        setcookie("userID",$_COOKIE["userID"],time()+31556926 ,'/');
+        $checkUser=$conn->prepare("SELECT * FROM customer WHERE userid='".$_COOKIE["userID"]."'");
+        $checkUser->execute();
+        $isUser = $checkUser->rowCount();
+        while($row=$checkUser->fetch(PDO::FETCH_ASSOC)){
+            $email = $row['email'];
+            $fname=$row['fname'];
+            $userid=$row['userid'];
+        }
+        if($email!=NULL){
+            $_SESSION['IS_LOGIN']=true;
+            $_SESSION['NAME']=$fname;
+            $_SESSION['EMAIL']=$email;
+            $_SESSION['USER_ID']=$userid;   
+        }
+        if($isUser==0){
+            $insertUser=$conn->prepare("INSERT INTO customer(userid, cookieUser) VALUE('".$_COOKIE['userID']."', 'yes')");
+            $insertUser->execute();
+        } 
+      }
     ?>
 
-
-    <base href="http://localhost/hos/">
-    <base href="https://admin.houseofsneakers.in">
-
+    
 
 </head>
 
