@@ -1,5 +1,5 @@
 <?php 
-include('hos-admin/include/config.php');
+include('include/database.php');
 $userid = $_COOKIE["userID"];
 if ($_POST['btn'] == 'addToCartproduct') {
     $image = test_input($_POST['image']);
