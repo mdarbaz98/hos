@@ -77,6 +77,9 @@ if($_POST['btn']=='deleteCategory_id'){
     $slug = strtolower($name);
     $slug = str_replace(' ', '-', $slug);
     $slug = preg_replace('/[^A-Za-z0-9\-]/', '', $slug);
+
+
+    
     $stmt = $conn->prepare("INSERT INTO product(img_id, product_name, slug, category, description, product_color, PostDate, status) VALUES(?,?,?,?,?,?,?,?)");
     if($stmt->execute([$img_id, $name, $slug, $cat, $description, $color, $PostDate, 1])){
                 $last_pro_id = $conn->lastInsertId();

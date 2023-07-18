@@ -120,7 +120,7 @@ message:{
             success: function(data){
               if(data=='done'){				
               alert("Login Successfully");
-							 window.location = "https://admin.houseofsneakers.in/home.php";
+							window.location = "https://admin.houseofsneakers.in/home.php";
 							//window.location = "http://localhost/hos/hos-admin/home.php";
 							}
 							else{

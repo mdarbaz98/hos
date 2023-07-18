@@ -41,7 +41,6 @@ include('include/config.php');
 								</div>
 
 								<div class="d-flex">
-									
 									<div class="form-group mx-3 w-100">
 									<label class="form-label"> Select Category </label>
 										<?php $stmt = $conn->prepare("SELECT * FROM `categories`");
@@ -65,7 +64,48 @@ include('include/config.php');
 											</div>
 								</div>
 
-							
+								<div class="d-flex my-4">
+									<div class="form-group mx-3  w-100">
+										<label for="Title" class="form-label">Authenticity Guaranteed</label>
+										<input type="text" class="form-control " id="pro_name" name="authenticity_guaranteed" placeholder="Enter Authenticity Guaranteed">
+									</div>
+									<div class="form-group  w-100">
+										<label for="horizontal-firstname-input">In Stock & Ready to ship</label>
+										<input type="text" class="form-control" id="slug" name="ready_to_ship" placeholder="Enter In Stock & Ready to ship">
+									</div>
+								</div>
+
+								<div class="d-flex my-4">
+									<div class="form-group mx-3  w-100">
+										<label for="Title" class="form-label">Returns Accepted</label>
+										<input type="text" class="form-control " id="pro_name" name="returns_accepted" placeholder="Enter Returns Accepted">
+									</div>
+									<div class="form-group  w-100">
+										<label for="horizontal-firstname-input">BRAND</label>
+										<input type="text" class="form-control" id="slug" name="brand" placeholder="Enter BRAND">
+									</div>
+								</div>
+
+								<div class="d-flex my-4">
+									
+								<div class="form-group mx-3  w-100">
+								<label class="form-label"> Select Gender </label>
+									<select class="form-control sel_cat" id="category" name="category" title="Please select Category">
+												<option value="">Select Gender</option>
+													<option value="male">Male</option>
+													<option value="female">Female</option>
+											</select>
+
+
+								</div>
+
+									<div class="form-group  w-100">
+										<label for="horizontal-firstname-input">Set Release Date</label>
+										<input type="text" class="form-control" name="release_date" value="Set Release Date" id="datetimepicker">
+									</div>
+								
+								</div>
+								
 								<div class="d-flex">	
 								<div class="form-group  w-100">
 										<label for="horizontal-firstname-input" class="col-form-label">Description</label>
