@@ -85,6 +85,24 @@
         font-size: 14px !important;
         padding: 0.5rem;
         }
+        .accordion-body{
+          padding: 0px;
+          ul{
+            padding: 0px;
+  margin: 0px;
+            li{
+              border: solid 1px rgb(198, 200, 202);
+              padding: 1rem 1.5rem;
+              display: flex;
+              cursor: pointer;
+              justify-content: space-between;
+              span{
+                font-size: 1rem;
+                color: #000;
+              }
+            }
+          }
+        }
       }
       .desc_accordion{
         .accordion-item{

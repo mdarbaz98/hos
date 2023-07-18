@@ -217,6 +217,24 @@
   font-size: 14px !important;
   padding: 0.5rem;
 }
+.product__page .product_side_bar .side_card .size_accordion .accordion-body {
+  padding: 0px;
+}
+.product__page .product_side_bar .side_card .size_accordion .accordion-body ul {
+  padding: 0px;
+  margin: 0px;
+}
+.product__page .product_side_bar .side_card .size_accordion .accordion-body ul li {
+  border: solid 1px rgb(198, 200, 202);
+  padding: 1rem 1.5rem;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+}
+.product__page .product_side_bar .side_card .size_accordion .accordion-body ul li span {
+  font-size: 1rem;
+  color: #000;
+}
 .product__page .product_side_bar .side_card .desc_accordion .accordion-item {
   border: none;
 }

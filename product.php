@@ -85,7 +85,20 @@
                                       </h2>
                                       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                          
+                                          <ul>
+                                            <li>
+                                                <span>9.5</span>
+                                                <span>$556</span>
+                                            </li>
+                                            <li>
+                                                <span>9.5</span>
+                                                <span>$556</span>
+                                            </li>
+                                            <li>
+                                                <span>9.5</span>
+                                                <span>$556</span>
+                                            </li>
+                                          </ul>
                                         </div>
                                       </div>
                                     </div>
