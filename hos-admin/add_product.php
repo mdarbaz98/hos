@@ -90,7 +90,7 @@ include('include/config.php');
 									
 								<div class="form-group mx-3  w-100">
 								<label class="form-label"> Select Gender </label>
-									<select class="form-control sel_cat" id="category" name="category" title="Please select Category">
+									<select class="form-control sel_cat" id="gender" name="gender" title="Please select Gender">
 												<option value="">Select Gender</option>
 													<option value="male">Male</option>
 													<option value="female">Female</option>

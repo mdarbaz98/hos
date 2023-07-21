@@ -73,15 +73,19 @@ if($_POST['btn']=='deleteCategory_id'){
     $description = $_POST['description']; 
     $img_id = $_POST['img_id'];
     $color = $_POST['color'];
-    $PostDate = date("Y-m-d H:i");
+    $authenticity_guaranteed = $_POST['authenticity_guaranteed'];
+    $ready_to_ship = $_POST['ready_to_ship'];
+    $returns_accepted = $_POST['returns_accepted'];
+    $brand = $_POST['brand'];
+    $release_date = $_POST['release_date'];
+    $gender = $_POST['gender'];
     $slug = strtolower($name);
     $slug = str_replace(' ', '-', $slug);
     $slug = preg_replace('/[^A-Za-z0-9\-]/', '', $slug);
 
-
-    
-    $stmt = $conn->prepare("INSERT INTO product(img_id, product_name, slug, category, description, product_color, PostDate, status) VALUES(?,?,?,?,?,?,?,?)");
-    if($stmt->execute([$img_id, $name, $slug, $cat, $description, $color, $PostDate, 1])){
+    $stmt = $conn->prepare("INSERT INTO product(img_id, product_name, slug, category, description, product_color, authenticity_guaranteed, ready_to_ship, 
+    returns_accepted, brand, gender, PostDate, status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    if($stmt->execute([$img_id, $name, $slug, $cat, $description, $color, $authenticity_guaranteed, $ready_to_ship, $returns_accepted, $brand, $gender, $release_date, 1])){
                 $last_pro_id = $conn->lastInsertId();
                 $total_price = count($_POST['size']);
                 if(!empty($total_price)){    
