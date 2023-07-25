@@ -513,6 +513,11 @@
 .cart__page .black__section .one__touch .inner__div {
   margin: 0px auto;
 }
+.cart__page .shipping__form {
+  padding: 30px;
+  background: #fff;
+  margin-bottom: 50px;
+}
 @media (max-width: 767px) {
   .cart__page .black__section .page__heading {
     font-size: 35px;
