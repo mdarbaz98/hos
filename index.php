@@ -7,7 +7,7 @@ include("./include/header.php") ?>
         <div class="banner-carousel owl-carousel">
             <div class="item">
                 <div class="card">
-                    <div class="sub__heading mehtab">BLACK AND WHITE</div>
+                    <div class="sub__heading mehtab">BLACK AND WHITE mq</div>
                     <div class="heading">
                         Back in Black( and ofc White)
                     </div>
