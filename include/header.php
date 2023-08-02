@@ -24,7 +24,7 @@ include('include/database.php');
     <?php
       if(strpos($actual_link, 'localhost')) {
     ?>
-      <base href="http://localhost/hos/">
+      <base href="http://localhost/shoes/">
     <?php
       }else {
     ?>
@@ -152,17 +152,21 @@ include('include/database.php');
                             <div class="row">
                                 <div class="col-lg-5 order-1 order-lg-0">
                                     <div class="form__section">
-                                        <form action="">
+                                        <form name="register" class="d-none" action="">
                                             <h5>Welcome !</h5>
                                             <span>Sign in to House of Sneakers</span>
                                             <div class="row">
                                                 <div class="col-12 mb-3">
                                                     <label for="username">Username</label>
-                                                    <input id="username" type="text" placeholder="Username">
+                                                    <input id="username" type="text" name="username" placeholder="Username">
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="password">Password</label>
-                                                    <input id="password" type="text" placeholder="Password">
+                                                    <input id="password" type="password" name="password" placeholder="Password">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="cpassword">Confirm Password</label>
+                                                    <input id="cpassword" type="password" name="cpassword" placeholder="Confirm Password">
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="check__div d-flex justify-content-between align-items-center">
@@ -177,8 +181,39 @@ include('include/database.php');
                                                 </div>
                                                 <div class="col-12">
                                                     <div>
-                                                    <button>Login</button>
-                                                    <p class="text-black-50">Don’y have an Account ? <a href=""><strong>Register</strong></a></p>
+                                                    <button type="submit">Register</button>
+                                                    <p class="text-black-50">Already have an Account ? <a class="register"><strong>Login</strong></a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form name="login" action="">
+                                            <h5>Welcome !</h5>
+                                            <span>Sign in to House of Sneakers</span>
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <label for="username">Username</label>
+                                                    <input id="username" type="text" name="username" placeholder="Username">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="password">Password</label>
+                                                    <input id="password" type="text" name="password" placeholder="Password">
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="check__div d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex flex-row-reverse align-items-center gap-2">
+                                                        <label for="check">Remember Me</label>
+                                                        <input id="check" type="checkbox">
+                                                        </div>
+                                                        <a href="">
+                                                            Forgot Password ?
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div>
+                                                    <button type="submit">Login</button>
+                                                    <p class="text-black-50">Don’t have an Account ? <a class="login"><strong>Register</strong></a></p>
                                                     </div>
                                                 </div>
                                             </div>
