@@ -11,10 +11,11 @@
                     <p class="foo__heading">Important Links:</p>
                     <ul>
                         <li><a href="about">ABOUT US</a></li>
-                        <li><a href="">PARTNERS</a></li>
+                        <li><a href="contact">CCONTACT US</a></li>
                         <li><a href="delivery">DELIVERY AND RETURNS</a></li>
-                        <li><a href="">AUTHENTICITY</a></li>
-                        <li><a href="">CAREERS</a></li>
+                        <li><a href="privacy">PRIVACY AND POLICY</a></li>
+                        <li><a href="return">RETURN AND REFUND</a></li>
+                        <li><a href="terms">TERM AND CONDITION</a></li>
                     </ul>
                 </div>
                 <div class="col">

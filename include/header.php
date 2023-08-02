@@ -24,7 +24,7 @@ include('include/database.php');
     <?php
       if(strpos($actual_link, 'localhost')) {
     ?>
-      <base href="http://localhost/shoes/">
+      <base href="http://localhost/hos/">
     <?php
       }else {
     ?>
