@@ -106,16 +106,12 @@
                             <a class="add_to_cart" href="javascript:void(0)" id="setaddProductToCart" onclick="addProductToCart(this)" data-image="<?php echo $image ?>" data-name="<?php echo $product_name ?>"
                             data-category="<?php echo $category ?>"data-price="<?php echo $price ?>" data-size="<?php echo 5.5 ?>" data-discounted_price="<?php echo $price ?>" data-shipping_charge="<?php echo $shipping_charge ?>"  >ADD TO CART</a>
                         </div>
-                        <div class="view__line d-flex">
-                            <span>🔥</span>
-                            <p><span>7048</span>views in the past day</p>
-                        </div>
                         <div class="side_card">
                             <div class="accordion desc_accordion accordion-flush" id="accordionFlushExample">
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="flush-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                      Accordion Item #1
+                                    Authenticity Guaranteed
                                     </button>
                                   </h2>
                                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -125,7 +121,7 @@
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="flush-headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                      Accordion Item #2
+                                    In Stock & Ready to ship
                                     </button>
                                   </h2>
                                   <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
@@ -135,7 +131,7 @@
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="flush-headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                      Accordion Item #3
+                                    Returns Accepted
                                     </button>
                                   </h2>
                                   <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -151,33 +147,27 @@
                         <div class="row">
                             <div class="col">
                                 <div class="cat">
-                                    Gender
+                                Brand
                                 </div>
-                                <p>dd1038787f</p>
+                                <p>Jordan</p>
+                            </div>
+                            <div class="col">
+                                <div class="cat">
+                                Color
+                                </div>
+                                <p>Black</p>
                             </div>
                             <div class="col">
                                 <div class="cat">
                                     Gender
                                 </div>
-                                <p>dd1038787f</p>
+                                <p>Male</p>
                             </div>
                             <div class="col">
                                 <div class="cat">
-                                    Gender
+                                Release Date
                                 </div>
-                                <p>dd1038787f</p>
-                            </div>
-                            <div class="col">
-                                <div class="cat">
-                                    Gender
-                                </div>
-                                <p>dd1038787f</p>
-                            </div>
-                            <div class="col">
-                                <div class="cat">
-                                    Gender
-                                </div>
-                                <p>dd1038787f</p>
+                                <p>September 2, 2023</p>
                             </div>
                         </div>
                 </div>
