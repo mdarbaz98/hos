@@ -6,6 +6,7 @@
         while ($row = $product->fetch(PDO::FETCH_ASSOC)){
 
             $product_name= $row['product_name'];
+            $pro_id= $row['id'];
             $category= $row['category'];
             $description= $row['description'];
             $price= $row['prc'];
@@ -57,16 +58,15 @@
                     <div class="col-lg-4">
                         <div class="product_side_bar">
                             <div class="category">
-                                <?php echo $category ?>
+                                <?php
+                                $category_remove = str_replace('-', ' ', $category);
+                                echo $category_remove = ucwords($category_remove);?>
                             </div>
                             <div class="name">
-                                <?php $product_name; ?>
-                            </div>
-                            <div class="product_short_desc mb-3">
-                                “Panda- Black/ White”
+                                <?php echo $product_name; ?>
                             </div>
                             <div class="price">
-                                INR <span> <?php echo $formattedPrice = number_format($price);?></span> & Up
+                                INR <span class="sizeProduct_price">00</span> & Up
                             </div>
                             <div class="tag_line">
                                 Duties & Taxes included
@@ -86,18 +86,18 @@
                                       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                           <ul>
-                                            <li>
-                                                <span>9.5</span>
-                                                <span>$556</span>
+                                            <?php
+                                                            $stmt_product_price = $conn->prepare("SELECT * FROM `product_price` WHERE status=1 AND product_id=?");
+                                                            $stmt_product_price->execute([$pro_id]);
+                                                            while($price_data = $stmt_product_price->fetch(PDO::FETCH_ASSOC)){
+                                            
+                                            ?>
+
+                                            <li onclick="getSizeprice(this)" data-size="<?php echo $price_data['size'] ?>" data-price="<?php echo $price_data['price'] ?>" data-dprice="<?php echo $price_data['d_price'] ?>">
+                                                <span><?php echo $price_data['size'] ?></span>
+                                                <span>INR <?php echo $price_data['price'] ?></span>
                                             </li>
-                                            <li>
-                                                <span>9.5</span>
-                                                <span>$556</span>
-                                            </li>
-                                            <li>
-                                                <span>9.5</span>
-                                                <span>$556</span>
-                                            </li>
+                                            <?php } ?>
                                           </ul>
                                         </div>
                                       </div>

@@ -1,3 +1,10 @@
+function getSizeprice(x){
+  var price = $(x).data('price');
+  var dprice = $(x).data('dprice');
+  var size = $(x).data('size');
+  $(`.sizeProduct_price`).html(price);
+}
+
 //product add into cart
 function addProductToCart(x){
     var image = $(x).data('image');
