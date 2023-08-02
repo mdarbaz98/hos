@@ -218,6 +218,8 @@
   padding: 0.5rem;
 }
 .product__page .product_side_bar .side_card .size_accordion .accordion-body {
+  overflow-y: scroll;
+  max-height: 290px;
   padding: 0px;
 }
 .product__page .product_side_bar .side_card .size_accordion .accordion-body ul {
@@ -1025,6 +1027,14 @@ footer .bottom__footer ul li a:hover {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+
+.p__carousel .owl-nav button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: rgb(137, 137, 137);
+  color: #fff;
 }
 
 .accordion-item h2 button:not(.collapse) {
