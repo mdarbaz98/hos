@@ -92,6 +92,50 @@ include('include/config.php');
 											</div>
 									
 								</div>
+
+								<div class="d-flex my-4">
+									<div class="form-group mx-3  w-100">
+										<label for="Title" class="form-label">Authenticity Guaranteed</label>
+										<input type="text" class="form-control " id="pro_name" name="authenticity_guaranteed" value="<?php echo $row['authenticity_guaranteed'] ?>">
+									</div>
+									<div class="form-group  w-100">
+										<label for="horizontal-firstname-input">In Stock & Ready to ship</label>
+										<input type="text" class="form-control" id="slug" name="ready_to_ship" value="<?php echo $row['ready_to_ship'] ?>">
+									</div>
+								</div>
+
+								<div class="d-flex my-4">
+									<div class="form-group mx-3  w-100">
+										<label for="Title" class="form-label">Returns Accepted</label>
+										<input type="text" class="form-control " id="pro_name" name="returns_accepted" value="<?php echo $row['returns_accepted'] ?>">
+									</div>
+									<div class="form-group  w-100">
+										<label for="horizontal-firstname-input">BRAND</label>
+										<input type="text" class="form-control" id="slug" name="brand" value="<?php echo $row['brand'] ?>">
+									</div>
+								</div>
+
+								<div class="d-flex my-4">
+									
+								<div class="form-group mx-3  w-100">
+								<label class="form-label"> Select Gender </label>
+									<select class="form-control sel_cat" id="gender" name="gender" title="Please select Gender">
+												<option value="">Select Gender</option>
+													<option value="male"<?php if ($row['gender']=='male') echo ' selected="selected"'; ?>>Male</option>
+													<option value="female" <?php if ($row['gender']=='female') echo ' selected="selected"'; ?>>Female</option>
+											</select>
+
+
+								</div>
+
+									<div class="form-group  w-100">
+										<label for="horizontal-firstname-input">Set Release Date</label>
+										<input type="text" class="form-control" name="release_date" value="<?php echo $row['PostDate'] ?>" id="datetimepicker">
+									</div>
+								
+								</div>
+
+
 								
 								<div class="d-flex mt-4">
 								
@@ -99,7 +143,7 @@ include('include/config.php');
 										<label for="horizontal-firstname-input" class="col-form-label">Description</label>
 										<textarea class="form-control" id="" name="discription" cols="15" rows="5"><?php echo $row['description'] ?></textarea>
 							  		</div>
-									<div class="form-group w-100 m-5">
+									<div class="form-group w-100 m-2">
 									<div class="blog-img-box mt-5" data-toggle="modal" data-target="#exampleModal"> <img src="https://spruko.com/demo/sash/sash/assets/plugins/fancyuploder/fancy_upload.png" alt="feature click image">
 										<h5>Set Feature Image</h5></div>
 										<input type="hidden" class="image_id" name="img_id" /> </div>
@@ -170,6 +214,8 @@ include('include/config.php');
 													<th>Size</th>
 													<th>Price</th>
 													<th>Discount Price</th>
+													<th>Edit</th>
+													<th>Delete</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -195,6 +241,8 @@ include('include/config.php');
 														<td>
 														<?php echo $data['d_price'] ?>
 														</td>
+														<td><a href="product_update.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></td>                                   
+                                 						<td><a class="btn btn-danger" href="javascript:void(0)" onclick="deleteProductprice(<?php echo $data['id']; ?>)"><i class="fas fa-trash-alt"></i></a></td>
 													</tr>
 													<?php $i++; } }?>
 											</tbody>

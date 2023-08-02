@@ -349,6 +349,29 @@ function trashProduct(id) {
     })
   }
 }
+
+//Trash product
+function deleteProductprice(id) {
+  var x = confirm('Are you sure you want to delete this?')
+  if (x) {
+    $.ajax({
+      type: 'POST',
+      url: 'action.php',
+      dataType: 'html',
+      data: {
+        trashProductprice_id: id,
+        btn: 'trashProductprice_id',
+      },
+      success: function (data) {
+        if (data == 'deleted') {
+          alert('Product Size Price Successfully Deleted')
+          location.reload()
+        }
+      },
+    })
+  }
+}
+
 //Permanent Delete product
 function deleteProduct(id) {
   var x = confirm('Are you sure you want to permanent delete this?')

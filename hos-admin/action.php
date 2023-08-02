@@ -88,6 +88,8 @@ if($_POST['btn']=='deleteCategory_id'){
     if($stmt->execute([$img_id, $name, $slug, $cat, $description, $color, $authenticity_guaranteed, $ready_to_ship, $returns_accepted, $brand, $gender, $release_date, 1])){
                 $last_pro_id = $conn->lastInsertId();
                 $total_price = count($_POST['size']);
+              
+                if(!empty($_POST['size'][0])){ 
                 if(!empty($total_price)){    
                 for($i=0;$i<$total_price;$i++){ 
                      $size = $_POST['size'][$i];
@@ -99,6 +101,8 @@ if($_POST['btn']=='deleteCategory_id'){
                       }
                 }
               }
+            }
+
               echo "inserted".$last_pro_id;
 
 
@@ -111,6 +115,16 @@ if($_POST['btn']=='deleteCategory_id'){
     $cat = $_POST['category'];
     $desc = $_POST['discription'];
     $color = $_POST['color'];
+    $authenticity_guaranteed = $_POST['authenticity_guaranteed'];
+    $ready_to_ship = $_POST['ready_to_ship'];
+    $returns_accepted = $_POST['returns_accepted'];
+    $brand = $_POST['brand'];
+    $gender = $_POST['gender'];
+    $release_date = $_POST['release_date'];
+  
+
+
+
     if(empty($_POST['img_id'])){
       $img_id = $_POST['old_img_id'];
     }else{
@@ -125,9 +139,12 @@ if($_POST['btn']=='deleteCategory_id'){
     $slug = strtolower($name);
     $slug = str_replace(' ', '-', $slug);
     $slug = preg_replace('/[^A-Za-z0-9\-]/', '', $slug);
-    $stmt = $conn->prepare("UPDATE product SET img_id=?, front_img=?, product_name=?, slug=?, category=?, description=?, product_color=? WHERE id=?");
-    if($stmt->execute([$img_id, $front_img, $name, $slug, $cat, $desc, $color, $product_id])){
+    $stmt = $conn->prepare("UPDATE product SET img_id=?, front_img=?, product_name=?, slug=?, category=?, description=?, product_color=?, 
+    product_color=?, authenticity_guaranteed=?, ready_to_ship=?, returns_accepted=?, brand=?, gender=?, PostDate=?  WHERE id=?");
+    if($stmt->execute([$img_id, $front_img, $name, $slug, $cat, $desc, $color, $authenticity_guaranteed, $ready_to_ship, $ready_to_ship,
+    $returns_accepted, $brand, $gender, $release_date, $product_id])){
     
+     if(!empty($_POST['size'][0])){ 
       $total_price = count($_POST['size']);
       if(!empty($total_price)){    
       for($i=0;$i<$total_price;$i++){ 
@@ -135,13 +152,11 @@ if($_POST['btn']=='deleteCategory_id'){
            $price =  $_POST['price'][$i];
            $d_price =  $_POST['d_price'][$i];
            $product_price = $conn->prepare("INSERT INTO product_price(product_id, size, price, d_price, status) VALUES(?,?,?,?,?)");
-            if($product_price->execute([$product_id, $size, $price, $d_price, 1])){
-              
+            if($product_price->execute([$product_id, $size, $price, $d_price, 1])){             
             }
       }
     }
-
-     
+  }
       echo "updated";
     }
   }
@@ -152,10 +167,10 @@ if($_POST['btn']=='uploadProduct_id'){
     echo 'uploaded';
     }
   // Trash product
-  if($_POST['btn']=='trashProduct_id'){
-    $update = $conn->prepare('DELETE FROM product WHERE id=?');
-    $update->execute([$_POST['trashProduct_id']]);
-    echo 'trashed';
+  if($_POST['btn']=='trashProductprice_id'){
+    $update = $conn->prepare('DELETE FROM product_price WHERE id=?');
+    $update->execute([$_POST['trashProductprice_id']]);
+    echo 'deleted';
     }
 
     // Permanent delete product
