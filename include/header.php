@@ -149,7 +149,7 @@ include('include/database.php');
                             <div class="row">
                                 <div class="col-lg-5 order-1 order-lg-0">
                                     <div class="form__section">
-                                        <form name="register" class="d-none" action="">
+                                        <form name="register" class="register" action="">
                                             <h5>Welcome !</h5>
                                             <span>Sign in to House of Sneakers</span>
                                             <div class="row">

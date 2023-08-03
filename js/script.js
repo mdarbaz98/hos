@@ -8,6 +8,8 @@ $('.login').click(function () {
     $(`form[name='login']`).hide();
 })
 $('.size_accordion .accordion-body li').click(function () {
+    $('.size_accordion .accordion-body li').removeClass('active')
+    $(this).addClass('active')
     $('.size_accordion button').click();
 })
 
