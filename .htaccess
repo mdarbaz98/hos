@@ -8,5 +8,5 @@ RewriteRule ^privacy/?$ privacypolicy.php?slug=$1
 RewriteRule ^return/?$ returnandrefund.php?slug=$1
 RewriteRule ^terms/?$ termsandcond.php?slug=$1
 RewriteRule ^([^/\.]+)/?$ product.php?slug=$1 [L,QSA]
-
+RewriteRule ^category/([^/\.]+)/?$ category.php?cat_slug=$1 [L,QSA]
 

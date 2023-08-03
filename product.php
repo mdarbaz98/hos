@@ -89,15 +89,20 @@
                                             <?php
                                                             $stmt_product_price = $conn->prepare("SELECT * FROM `product_price` WHERE status=1 AND product_id=?");
                                                             $stmt_product_price->execute([$pro_id]);
+                                                            $i=1;
                                                             while($price_data = $stmt_product_price->fetch(PDO::FETCH_ASSOC)){
-                                            
+                                                             if($i==1){
+                                                                $class="active";
+                                                             }else{
+                                                                $class="";
+                                                             }   
                                             ?>
 
-                                            <li onclick="getSizeprice(this)" data-size="<?php echo $price_data['size'] ?>" data-price="<?php echo $price_data['price'] ?>" data-dprice="<?php echo $price_data['d_price'] ?>">
+                                            <li class="<?php echo $class ?>" onclick="getSizeprice(this)" data-size="<?php echo $price_data['size'] ?>" data-price="<?php echo $price_data['price'] ?>" data-dprice="<?php echo $price_data['d_price'] ?>">
                                                 <span><?php echo $price_data['size'] ?></span>
                                                 <span>INR <?php echo $price_data['price'] ?></span>
                                             </li>
-                                            <?php } ?>
+                                            <?php  $i++; } ?>
                                           </ul>
                                         </div>
                                       </div>

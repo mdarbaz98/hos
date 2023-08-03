@@ -97,15 +97,12 @@ include('include/database.php');
         </div>
         <div class="bottom__header d-md-block d-none">
             <ul>
-                <li><a>JORDAN</a></li>
-                <li><a>JORDAN</a></li>
-                <li><a>JORDAN</a></li>
-                <li><a>JORDAN</a></li>
-                <li><a>JORDAN</a></li>
-                <li><a>JORDAN</a></li>
-                <li><a>JORDAN</a></li>
-                <li><a>JORDAN</a></li>
-                <li><a>JORDAN</a></li>
+                <?php
+                $category=$conn->prepare("SELECT * FROM categories order by id desc");
+                $category->execute();
+                while($row=$category->fetch(PDO::FETCH_ASSOC)){ ?>
+                <li><a href="category/<?php echo $row['cat_slug'] ?>"><?php echo $row['cat_name'] ?></a></li>
+                <?php } ?>
             </ul>
         </div>
         <!-- Modal For Search -->

@@ -199,3 +199,8 @@ function getCart() {
       },
     });
   }
+
+  function load_for_active_class_call() {
+    $(".size_accordion .active").click();
+  }
+  load_for_active_class_call();

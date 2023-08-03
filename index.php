@@ -13,7 +13,7 @@ include("./include/header.php") ?>
                     </div>
                     <p>The original "Black/White" colorway returns, this time in the fully remastered '85
                         construction.</p>
-                    <button><a class="text-white" href="product.html">SHOP NOW</a></button>
+                    <button><a class="text-white" href="#1">SHOP NOW</a></button>
                 </div>
                 <img src="images/home/banner1.jpg" alt="">
             </div>
@@ -29,11 +29,11 @@ include("./include/header.php") ?>
                 <div class="P__1 p__carousel owl-carousel">
 
                 	 <?php
-                 $product=$conn->prepare("SELECT * FROM product  order by id ASC limit 8");
+                 $product=$conn->prepare("SELECT * FROM product order by id DESC limit 8");
                  $product->execute();
                  $i=0;
                     while ($row = $product->fetch(PDO::FETCH_ASSOC)){
-                        
+                        $pro_id= $row['id'];
                        // for image                    
                     $stmt_img = $conn->prepare("SELECT * FROM `images` WHERE status=1 AND id=?");
 					$stmt_img->execute([$row['img_id']]);
@@ -45,6 +45,14 @@ include("./include/header.php") ?>
                         $image="Not Found";
 						$alt="Not Found";
 						}
+
+                        $stmt_product_price = $conn->prepare("SELECT * FROM `product_price` WHERE status=1 AND product_id=?");
+                        $stmt_product_price->execute([$pro_id]);
+                        $i=1;
+                        $price_data = $stmt_product_price->fetchAll(PDO::FETCH_ASSOC);
+                        $price= $price_data[0]['price'];             
+                        $dprice= $price_data[0]['d_price'];             
+
                 ?>	<a href="<?php echo $row['slug'] ?>">    
                     <div class="p__card">
                         <i class="wishlist fa-regular fa-heart"></i>
@@ -58,10 +66,10 @@ include("./include/header.php") ?>
                         </div>
                         <div class="price__part d-flex gap-3">
                         <div class="p__price cross">
-                            $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                            $ <?php echo number_format($dprice);?>
                         </div>
                             <div class="p__price">
-                                $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                                $ <?php echo number_format($price);?>
                             </div>
                         </div>
                     </div>
@@ -75,18 +83,14 @@ include("./include/header.php") ?>
         <div class="products__section py-5">
             <div class="owl__slider">
                 <div class="slider__heading">
-                    New Releases
+                    Yeezy 350
                 </div>
                 <div class="P__1 p__carousel owl-carousel">
-                    
-                
-                
                 <?php
-                 $product=$conn->prepare("SELECT * FROM product  order by id DESC limit 8");
+                 $product=$conn->prepare("SELECT * FROM product  WHERE category='yeezy-350' order by id asc limit 8");
                  $product->execute();
                  $i=0;
                     while ($row = $product->fetch(PDO::FETCH_ASSOC)){
-                        
                        // for image                    
                     $stmt_img = $conn->prepare("SELECT * FROM `images` WHERE status=1 AND id=?");
 					$stmt_img->execute([$row['img_id']]);
@@ -98,6 +102,13 @@ include("./include/header.php") ?>
                         $image="Not Found";
 						$alt="Not Found";
 						}
+                        // $stmt_product_price = $conn->prepare("SELECT * FROM `product_price` WHERE status=1 AND product_id=?");
+                        // $stmt_product_price->execute([$pro_id]);
+                        // $i=1;
+                        // $price_data = $stmt_product_price->fetchAll(PDO::FETCH_ASSOC);
+                        // $price= $price_data[0]['price'];             
+                        // $dprice= $price_data[0]['d_price'];             
+
                 ?>	   <a href="<?php echo $row['slug'] ?>">  
                     <div class="p__card">
                         <i class="wishlist fa-regular fa-heart"></i>
@@ -109,14 +120,14 @@ include("./include/header.php") ?>
                         <div class="p__cat">
                             "<?php echo $row['category'] ?>"
                         </div>
-                        <div class="price__part d-flex gap-3">
+                        <!-- <div class="price__part d-flex gap-3">
                         <div class="p__price cross">
-                            $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                            $ <?php echo number_format($dprice);?>
                         </div>
                             <div class="p__price">
-                                $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                                $ <?php echo number_format($price);?>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     </a>
             <?php } ?>
@@ -128,7 +139,7 @@ include("./include/header.php") ?>
         <div class="products__section py-5">
             <div class="owl__slider">
                 <div class="slider__heading">
-                    New Releases
+                Jordan 1 High
                 </div>
                 <div class="P__1 p__carousel owl-carousel">
                 <?php
@@ -136,7 +147,7 @@ include("./include/header.php") ?>
                  $product->execute();
                  $i=0;
                     while ($row = $product->fetch(PDO::FETCH_ASSOC)){
-                        
+                        $pro_id= $row['id'];
                        // for image                    
                     $stmt_img = $conn->prepare("SELECT * FROM `images` WHERE status=1 AND id=?");
 					$stmt_img->execute([$row['img_id']]);
@@ -148,6 +159,13 @@ include("./include/header.php") ?>
                         $image="Not Found";
 						$alt="Not Found";
 						}
+                        // $stmt_product_price = $conn->prepare("SELECT * FROM `product_price` WHERE status=1 AND product_id=?");
+                        // $stmt_product_price->execute([$pro_id]);
+                        // $i=1;
+                        // $price_data = $stmt_product_price->fetchAll(PDO::FETCH_ASSOC);
+                        // $price= $price_data[0]['price'];             
+                        // $dprice= $price_data[0]['d_price'];     
+
                 ?>	    <a href="<?php echo $row['slug'] ?>"> 
                     <div class="p__card">
                         <i class="wishlist fa-regular fa-heart"></i>
@@ -159,14 +177,14 @@ include("./include/header.php") ?>
                         <div class="p__cat">
                             "<?php echo $row['category'] ?>"
                         </div>
-                        <div class="price__part d-flex gap-3">
+                        <!-- <div class="price__part d-flex gap-3">
                         <div class="p__price cross">
-                            $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                            $ <?php echo number_format($dprice);?>
                         </div>
                             <div class="p__price">
-                                $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                                $ <?php echo number_format($price);?>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     </a>
             <?php } ?>
@@ -176,7 +194,7 @@ include("./include/header.php") ?>
         <div class="products__section py-5">
             <div class="owl__slider">
                 <div class="slider__heading">
-                    New Releases
+                SB Dunk
                 </div>
                 <div class="P__1 p__carousel owl-carousel">
                 <?php
@@ -184,7 +202,7 @@ include("./include/header.php") ?>
                  $product->execute();
                  $i=0;
                     while ($row = $product->fetch(PDO::FETCH_ASSOC)){
-                        
+    
                        // for image                    
                     $stmt_img = $conn->prepare("SELECT * FROM `images` WHERE status=1 AND id=?");
 					$stmt_img->execute([$row['img_id']]);
@@ -196,6 +214,12 @@ include("./include/header.php") ?>
                         $image="Not Found";
 						$alt="Not Found";
 						}
+                        // $stmt_product_price = $conn->prepare("SELECT * FROM `product_price` WHERE status=1 AND product_id=?");
+                        // $stmt_product_price->execute([$pro_id]);
+                        // $i=1;
+                        // $price_data = $stmt_product_price->fetchAll(PDO::FETCH_ASSOC);
+                        // $price= $price_data[0]['price'];             
+                        // $dprice= $price_data[0]['d_price'];   
                 ?>	<a href="<?php echo $row['slug'] ?>"> 
                     <div class="p__card">
                         <i class="wishlist fa-regular fa-heart"></i>
@@ -207,14 +231,14 @@ include("./include/header.php") ?>
                         <div class="p__cat">
                             "<?php echo $row['category'] ?>"
                         </div>
-                        <div class="price__part d-flex gap-3">
+                        <!-- <div class="price__part d-flex gap-3">
                         <div class="p__price cross">
-                            $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                            $ <?php echo number_format($dprice);?>
                         </div>
                             <div class="p__price">
-                                $ <?php echo $formattedPrice = number_format($row['prc']);?>
+                                $ <?php echo number_format($price);?>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     </a>
             <?php } ?>
