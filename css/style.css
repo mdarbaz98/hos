@@ -237,6 +237,9 @@
   font-size: 1rem;
   color: #000;
 }
+.product__page .product_side_bar .side_card .size_accordion .accordion-body ul li.active {
+  background-color: #e6f3ff;
+}
 .product__page .product_side_bar .side_card .desc_accordion .accordion-item {
   border: none;
 }
@@ -576,6 +579,9 @@ a {
   color: #000;
 }
 
+header form.register {
+  display: none;
+}
 header .side__bar {
   padding-top: 3rem;
   position: fixed;
@@ -1033,8 +1039,8 @@ footer .bottom__footer ul li a:hover {
   width: 40px;
   height: 40px;
   border-radius: 50px;
-  background: rgb(137, 137, 137);
-  color: #fff;
+  background: rgb(137, 137, 137) !important;
+  color: #fff !important;
 }
 
 .accordion-item h2 button:not(.collapse) {

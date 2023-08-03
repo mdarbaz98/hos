@@ -11,6 +11,7 @@ $('.p__carousel').owlCarousel({
     margin:20,
     dots:true,
     nav: true,
+    navText: ['<i class="fa-solid fa-chevron-right"></i>','<i class="fa-solid fa-chevron-right"></i>'],
     responsiveClass:true,
     // items: 5,
         responsive: {
