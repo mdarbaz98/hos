@@ -98,9 +98,9 @@ include('include/database.php');
         <div class="bottom__header d-md-block d-none">
             <ul>
                 <?php
-                $category=$conn->prepare("SELECT * FROM categories order by id desc");
-                $category->execute();
-                while($row=$category->fetch(PDO::FETCH_ASSOC)){ ?>
+                $all_category=$conn->prepare("SELECT * FROM categories order by id desc");
+                $all_category->execute();
+                while($row=$all_category->fetch(PDO::FETCH_ASSOC)){ ?>
                 <li><a href="category/<?php echo $row['cat_slug'] ?>"><?php echo $row['cat_name'] ?></a></li>
                 <?php } ?>
             </ul>
