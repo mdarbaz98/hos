@@ -227,7 +227,9 @@ include('include/config.php');
 															$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 															if (!empty($data)) {
 															foreach ($data as $data)
-															{?>
+															{
+																$price_id = $data['id'];
+																?>
 													<tr class="odd">
 														<td class="sorting_1 dtr-control" tabindex="0">
 															<?php echo $i; ?>
@@ -241,8 +243,8 @@ include('include/config.php');
 														<td>
 														<?php echo $data['d_price'] ?>
 														</td>
-														<td><a href="product_update.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></td>                                   
-                                 						<td><a class="btn btn-danger" href="javascript:void(0)" onclick="deleteProductprice(<?php echo $data['id']; ?>)"><i class="fas fa-trash-alt"></i></a></td>
+														<td><a href="javascript:void(0)" onclick="productPriceupdate(<?php echo $price_id ?>)" class="btn btn-success"><i class="fas fa-edit"></i></td>                                   
+                                 						<td><a class="btn btn-danger" href="javascript:void(0)" onclick="deleteProductprice(<?php echo $price_id ?>)"><i class="fas fa-trash-alt"></i></a></td>
 													</tr>
 													<?php $i++; } }?>
 											</tbody>

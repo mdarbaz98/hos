@@ -372,6 +372,33 @@ function deleteProductprice(id) {
   }
 }
 
+
+function productPriceupdate(id){
+  $.ajax({
+  type: 'POST',
+  url: 'action.php',
+  dataType: 'json',
+  data: {
+    productPriceupdate: id,
+    btn: 'productPriceupdate',
+  },
+  success: function (data) {
+
+    var json = $.parseJSON(JSON.stringify(data));
+    var price = json.price;
+    var dprice = json.dprice;
+    var size = json.size;
+    var updateProductprice_id = json.updateProductprice_id;
+
+    $("#productPrice_price").val(price);
+    $("#productPrice_dprice").val(dprice);
+    $("#productPrice_size").val(size);
+    $("#updateProductprice_id").val(updateProductprice_id);
+  },
+})
+$('#priceUpdatemodal').modal('show');
+}
+
 //Permanent Delete product
 function deleteProduct(id) {
   var x = confirm('Are you sure you want to permanent delete this?')

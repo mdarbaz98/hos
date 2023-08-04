@@ -181,6 +181,36 @@ if($_POST['btn']=='uploadProduct_id'){
         }
 //   product ends here
 //user
+
+// get product price data
+
+if($_POST['btn']=="productPriceupdate"){
+    
+
+  $getAddress=$conn->prepare("SELECT * FROM product_price WHERE id=?");
+  $getAddress->execute([$_POST['productPriceupdate']]);
+  while($row=$getAddress->fetch(PDO::FETCH_ASSOC)){
+      echo json_encode(array(
+          "price"=>$row['price'],
+          "dprice"=>$row['d_price'],
+          "size"=>$row['size'],
+          "updateProductprice_id"=>$row['id'],
+      ));    
+  }
+}
+
+if($_POST['btn']=='updateProductprice'){
+  $update = $conn->prepare('UPDATE product_price SET size=?, price=?, d_price=? WHERE id=?');
+  $update->execute([$_POST['size'], $_POST['price'], $_POST['dprice'], $_POST['updateProductprice_id']]);
+  echo 'updated';
+  }
+  
+if($_POST['btn']=='Product_price_id'){
+  $update = $conn->prepare('SELECT * FROM product_price WHERE id=?');
+  $update->execute([$_POST['Product_price_id']]);
+  }
+
+
 if($_POST['btn']=='addUser'){
     $name = trim_data($_POST['name']);
     $username = trim_data($_POST['username']);
