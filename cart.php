@@ -1,7 +1,4 @@
 <?php include("./include/header.php") ?>
-
-
-
         <section class="cart__page">
             <div class="black__section">
                 <div class="container">

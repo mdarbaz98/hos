@@ -215,7 +215,7 @@
                             "<?php echo $row['category'] ?>"
                         </div>
                         <div class="p__price">
-                            $ <?php echo $formattedPrice = number_format($price);?>
+                            INR <?php echo $formattedPrice = number_format($price);?>
                         </div>
                     </div>
                     </a>
