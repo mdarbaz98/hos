@@ -206,7 +206,7 @@
                 ?>	<a href="<?php echo $row['slug'] ?>">    
                     <div class="p__card">
                         <i class="wishlist fa-regular fa-heart"></i>
-                        <img src="http://admin.houseofsneakers.in/<?php echo $image ?>" alt="">
+                        <img src="hos-admin/<?php echo $image ?>" alt="">
                         <div class="p__name"><?php echo $row['product_name'] ?></div>
                         <div class="P__desc">
                             <?php //echo $row['category'] ?>
