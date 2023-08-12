@@ -11,7 +11,7 @@
                     <p class="foo__heading">Important Links:</p>
                     <ul>
                         <li><a href="about">ABOUT US</a></li>
-                        <li><a href="contact">CCONTACT US</a></li>
+                        <li><a href="contact">CONTACT US</a></li>
                         <li><a href="delivery">DELIVERY AND RETURNS</a></li>
                         <li><a href="privacy">PRIVACY AND POLICY</a></li>
                         <li><a href="return">RETURN AND REFUND</a></li>
@@ -20,10 +20,10 @@
                 </div>
                 <div class="col">
                     <p class="foo__heading l">HOUSE OF SNEAKERS</p>
-                    <span>(CIN: U72900KA2021PTC151652)</span>
+                    <span><h1><i>Every Shoes has a Story</i></h1></span>
                     <div class="d-flex gap-3 mt-4">
                         <i class="fa-solid fa-location-dot"></i>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Kolkata, INDIA.</p>
                     </div>
                 </div>
             </div>

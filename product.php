@@ -120,7 +120,7 @@
                                     </button>
                                   </h2>
                                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                    <div class="accordion-body">Authenticity is the foundation of our business, and every item we sell is inspected by our expert team. Our authenticators are the most experienced and highly trained in the business. In addition, we source our products only from trusted suppliers.</div>
                                   </div>
                                 </div>
                                 <div class="accordion-item">
@@ -130,7 +130,7 @@
                                     </button>
                                   </h2>
                                   <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                                    <div class="accordion-body">We hold and authenticate inventory on site so you don’t have to wait to receive product from a 3rd party seller. Processing and order verification typically occur 1-3 business days prior to shipping</div>
                                   </div>
                                 </div>
                                 <div class="accordion-item">
@@ -140,7 +140,9 @@
                                     </button>
                                   </h2>
                                   <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                                    <div class="accordion-body">We offer free global returns for all eligible and full-priced items. Final sale items will be noted on the product page.  Please see <a href="return">return policy</a> for further details!
+
+</div>
                                   </div>
                                 </div>
                               </div>

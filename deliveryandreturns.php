@@ -9,12 +9,7 @@
                         <div>
                             <span>Last modified on 02/29/2024 </span>
                             <p>House of Sneakers is committed to delivering an exceptional customer experience. We encourage you to contact us with any questions or concerns prior to placing your order</p>
-                            <h2>CANCELLATIONS</h2>
-                            <p>For all orders, processing and verification times range from 1 to 3 business days before an order ships. Additional time may be required during promotional periods and holidays. You will receive an email with tracking information once your order has shipped.</p>
-                            <p>Orders delivered to the U.S. will be shipped via UPS, and orders delivered internationally will be shipped via DHL.</p>
-                            <p>
-                                Please be advised that we cannot make any changes to the shipping address once an order has shipped. Additionally, we do not ship to P.O. Boxes.
-                            </p>
+                    
                             <h2>
                                 CANCELLATIONS
                             </h2>
