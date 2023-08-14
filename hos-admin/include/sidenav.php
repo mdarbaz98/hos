@@ -18,14 +18,12 @@
                 </li>
                 <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="bx bx-detail"></i><span key="t-ecommerce">Customer Order</span></a>
                 <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="add_post.php" key="t-products">Add</a></li>
-                        <li><a href="customer_detail.php" key="t-product-detail">Listing</a></li>
+                        <li><a href="order_productlist.php" key="t-product-detail">Listing</a></li>
                     </ul>
                 </li>
                 <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="bx bx-detail"></i><span key="t-ecommerce">Order Product</span></a>
                 <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="add_post.php" key="t-products">Add</a></li>
-                        <li><a href="order_product.php" key="t-product-detail">Listing</a></li>
+                        <li><a href="order_list.php" key="t-product-detail">Listing</a></li>
                     </ul>
                 </li>
                 <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="bx bx-detail"></i><span key="t-ecommerce">User</span></a>

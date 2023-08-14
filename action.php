@@ -49,7 +49,7 @@ if ($_POST['btn'] == "load_maincart_data") {
 
             $cart_product .= '<div class="card_p">
                                    <div class="left__div">
-                                    <img src="https://admin.houseofsneakers.in/'.$pro_img.'" alt="'.$pro_img.'">
+                                    <img src="hos-admin/'.$pro_img.'" alt="'.$pro_img.'">
                                         <div>
                                             <p>Adidas T-Shirt</p><span> '.$pro_name.' </span>
                                         </div>
@@ -265,6 +265,61 @@ if($_POST['btn']=='AddedToWishlist'){
         echo "done";
     }
 }
+
+
+// this is address add
+
+if ($_POST['btn'] == 'addUseraddress') {
+    $fname = test_input($_POST['fname']);
+    $lname = test_input($_POST['lname']);
+    $email = test_input($_POST['email']);
+    $phone = test_input($_POST['phone']);
+    $address = test_input($_POST['address']);
+    $pincode = test_input($_POST['pincode']);
+    $city = test_input($_POST['city']);
+    $state = test_input($_POST['state']);
+
+    $select_stmt2=$conn->prepare("INSERT INTO address(fname, lname, email, phone, address, pincode, city, state) value(?,?,?,?,?,?,?,?)");
+    $select_stmt2->execute([$fname, $lname, $email, $phone, $address, $pincode, $city, $state]);
+    if($select_stmt2) {
+    $orderId = "INV-" . date("ymdhis");
+    $selectCartProduct = $conn->prepare("SELECT * FROM cart WHERE userId= '$userid' && wishlist=0");
+    $selectCartProduct->execute();
+    while ($row = $selectCartProduct->fetch(PDO::FETCH_ASSOC))
+    {
+        $pro_name = $row['pro_name'];
+        $size = $row['size'];
+        $pro_category = $row['pro_category'];
+        $pro_price = $row['pro_price'];
+        $pro_img = $row['pro_img'];
+        $pro_qty = $row['pro_qty'];
+        $sub_total = $row['sub_total'];
+        $total = $row['total'];
+        $shipping_charge = $row['shipping_charge'];
+        $discounted_price = $row['discounted_price'];
+        $insertProduct = $conn->prepare("INSERT into orderproduct(orderid, pro_name, size, pro_category, pro_price, pro_img, pro_qty, sub_total,
+        total, shipping_charge, discounted_price, userid) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
+        $insertProduct->execute([$orderId, $pro_name, $size, $pro_category, $pro_price, $pro_img, $pro_qty, $sub_total, $total, $shipping_charge, $discounted_price, $userid]);
+    }
+    $allProductPrice = $conn->prepare("SELECT SUM(total) AS totalPrice, SUM(discounted_price) AS discount  FROM cart WHERE userID='$userid' && wishlist=0");
+    $allProductPrice->execute();
+    while ($priceTotal = $allProductPrice->fetch(PDO::FETCH_ASSOC))
+    {
+        $totalCartPrice = $priceTotal['totalPrice'];
+        $discount = $priceTotal['discount'];
+    }
+    $insertOrderDetails = $conn->prepare("INSERT INTO order_details(orderid, userid, totalPrice, discount, fname, lname, email, phone, address, pincode, city, state) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
+    $insertOrderDetails->execute([$orderId, $userid, $totalCartPrice, $discount, $fname, $lname, $email, $phone, $address, $pincode, $city, $state]);
+    if ($insertOrderDetails)
+    {
+        $deleteFromCart = $conn->prepare("DELETE FROM cart WHERE userid=? && wishlist=0");
+        $deleteFromCart->execute([$userid]);
+    }
+    echo "done";
+  }
+
+}
+
 
 function test_input($data) {
     $data = trim($data);

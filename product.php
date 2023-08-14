@@ -33,12 +33,7 @@
                     $alt="Not Found";
                     }
         }
-
-
-
-
     include("./include/header.php") ?>
-
         <section class="product__page">
             <div class="container-fluid">
                 <div class="row">
@@ -47,7 +42,7 @@
                             <p><span>HOUSE OF SNEAKERS</span> | <span>HOUSE OF SNEAKERS</span> | <span>HOUSE OF SNEAKERS</span></p>
                         <div class="product_carousel">
                             <div class="product owl-carousel">
-                                <img src="https://admin.houseofsneakers.in/<?php echo $image ?>" alt="<?php echo $image ?>">
+                                <img src="hos-admin/<?php echo $image ?>" alt="<?php echo $image ?>">
                             </div>
                         </div>
                         <div class="desc ellipses"><?php echo $description ?></div>

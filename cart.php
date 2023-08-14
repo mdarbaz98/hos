@@ -80,46 +80,47 @@
                         </div>
                         <div class="col-md-6">
                             <div class="shipping__form">
-                                <form action="">
-                                    <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                        <label for="floatingInput">Email address</label>
-                                      </div>
-                                      <div class="row">
+                                <form name="userOrderplace">
+                                <div class="row">
                                         <div class="col">
                                             <div class="form-floating mb-3">
-                                                <input type="text" class=" form-control" id="floatingfirst" placeholder="First name">
+                                                <input type="text" class=" form-control" id="floatingfirst" name="fname" placeholder="First name">
                                                 <label for="floatingfirst">First Name</label>
                                               </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" id="floatingLast" placeholder="Last name">
+                                                <input type="text" class="form-control" id="floatingLast" name="lname" placeholder="Last name">
                                                 <label for="floatingLast">Last Name</label>
                                               </div>
                                         </div>
                                       </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+                                        <label for="floatingInput">Email address</label>
+                                      </div>
                                       <div class="form-floating mb-3">
-                                        <input type="text" class=" form-control" id="floatingAddress" placeholder="Street Address">
+                                        <input type="tel" class=" form-control" id="floatingZip" placeholder="Zip" name="phone">
+                                        <label for="floatingZip">Phone</label>
+                                      </div>
+                                      <div class="form-floating mb-3">
+                                        <input type="text" class=" form-control" id="floatingAddress" name="address" placeholder="Street Address">
                                         <label for="floatingAddress">Street Address</label>
                                       </div>
                                       <div class="form-floating mb-3">
-                                        <input type="text" class=" form-control" id="floatingAddress2" placeholder="Street Address 2">
-                                        <label for="floatingAddress2">Street Address 2</label>
-                                      </div>
-                                      <div class="form-floating mb-3">
-                                        <input type="text" class=" form-control" id="floatingCity" placeholder="City">
+                                        <input type="text" class=" form-control" id="floatingCity" placeholder="City" name="city">
                                         <label for="floatingCity">City</label>
                                       </div>
                                       <div class="form-floating mb-3">
-                                        <input type="text" class=" form-control" id="floatingZip" placeholder="Zip">
-                                        <label for="floatingZip">Zip/postal code</label>
+                                        <input type="text" class=" form-control" id="floatingCity" placeholder="State" name="state">
+                                        <label for="floatingCity">State</label>
                                       </div>
                                       <div class="form-floating mb-3">
-                                        <input type="tel" class=" form-control" id="floatingZip" placeholder="Zip">
-                                        <label for="floatingZip">Phone</label>
+                                        <input type="text" class=" form-control" id="floatingZip" placeholder="Zip" name="pincode">
+                                        <label for="floatingZip">Zip/postal code</label>
                                       </div>
-                                      <button class="add_to_cart">continue to shopping options</button>
+                                      <input type="hidden" name="btn" value="addUseraddress"/>
+                                      <button class="add_to_cart" type="submit">continue to shopping options</button>
                                     </div>
                                 </form>
                             </div>
@@ -164,38 +165,6 @@
                                     </div>
                                 </form>
                             </div> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white usps">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-4"><div class="py-3">
-                                <h3>Authenticity guarantee</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis neque cupiditate.</p>
-                            </div></div>
-                            <div class="col-lg-4"><div class="py-3">
-                                <h3>Authenticity guarantee</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis neque cupiditate.</p>
-                            </div></div>
-                            <div class="col-lg-4"><div class="py-3">
-                                <h3>Authenticity guarantee</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis neque cupiditate.</p>
-                            </div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="one__touch">
-                    <div class="inner__div">
-                        <h3>
-                            You should always stay updated
-                        </h3>
-                        <p>Subscribe to our Newsletter and get all of the coolest updates, quicker than anyone else.</p>
-                        <div class="mail__div">
-                            <input type="text" placeholder="Your email address">
-                            <button>
-                                Subscribe
-                            </button>
                         </div>
                     </div>
                 </div>

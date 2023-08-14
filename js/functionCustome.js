@@ -204,3 +204,92 @@ function getCart() {
     $(".size_accordion .active").click();
   }
   load_for_active_class_call();
+
+
+      // register for validation 
+$(function() {
+  $("form[name='userOrderplace']").validate({
+    // Specify validation rules
+    rules: {
+      fname: {
+        minlength: 3,
+                    maxlength: 30,
+                    //pattern: "^[a-zA-Z_]*$",
+                    required: true
+      },
+      lname: {
+        minlength: 3,
+                    maxlength: 30,
+                    //pattern: "^[a-zA-Z_]*$",
+                    required: true
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      phone: {
+        required: true,
+        minlength: 10,
+        maxlength: 10,
+      },
+      address: {
+        minlength: 3,
+                    maxlength: 30,
+                    //pattern: "^[a-zA-Z_]*$",
+                    required: true
+      },pincode: {
+        minlength: 3,
+                    maxlength: 30,
+                    //pattern: "^[a-zA-Z_]*$",
+                    required: true
+      },state: {
+                    //minlength: 3,
+                    //maxlength: 30,
+                    //pattern: "^[a-zA-Z_]*$",
+                    required: true
+      },
+      city: {
+                    //minlength: 3,
+                    //maxlength: 30,
+                    //pattern: "^[a-zA-Z_]*$",
+                    required: true
+      },
+    },
+    // Specify validation error messages
+    messages: {
+      name: {
+        minlength:"min length should be 3",
+        maxlength:"min length should be 30",
+        //pattern: "should be alphabet",
+        required:"Please enter your first name"
+      },
+      lname: {
+        minlength:"min length should be 3",
+        maxlength:"min length should be 30",
+        //pattern: "should be alphabet",
+        required:"Please enter your last name"
+      },
+      email: "Please enter a valid email address",
+      password: {
+        required: "Please provide a password",
+        minlength: "Your password must be at least 6 characters long"
+      },
+    },
+    submitHandler: function(form) {
+          var formData = new FormData(form);
+          var url = window.location.href;
+          $.ajax({
+            url: "action.php",
+            type: "post",
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function (data) {
+            alert(data);
+            //window.location.href='order.php'
+            },
+          });
+        }
+  });
+});

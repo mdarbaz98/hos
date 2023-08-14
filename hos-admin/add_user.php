@@ -76,6 +76,6 @@ include('include/config.php');
 	<?php
     include('include/footer.php');
 					}else{
-	echo "<script>window.location='https://admin.houseofsneakers.in/'</script>";
+	echo "<script>window.location='hos-admin/'</script>";
 	}
  ?>
