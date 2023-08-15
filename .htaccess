@@ -7,6 +7,11 @@ RewriteRule ^delivery/?$ deliveryandreturns.php?slug=$1
 RewriteRule ^privacy/?$ privacypolicy.php?slug=$1
 RewriteRule ^return/?$ returnandrefund.php?slug=$1
 RewriteRule ^terms/?$ termsandcond.php?slug=$1
+RewriteRule ^orderconfirm/?$ orderconfirm.php?slug=$1
+RewriteRule ^category/([^/\.]+)/?$ category.php?slug=$1 [NC,L]
 RewriteRule ^([^/\.]+)/?$ product.php?slug=$1 [L,QSA]
-RewriteRule ^category/([^/\.]+)/?$ category.php?cat_slug=$1 [L,QSA]
+# RewriteRule ^category/([^/\.]+)/?$ category.php?cat_slug=$1 [L,QSA]
 
+
+
+# RewriteRule ^([^/\.]+)/?$ shop1.php?productCategory=$1 [L,QSA]

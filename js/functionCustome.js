@@ -3,6 +3,10 @@ function getSizeprice(x){
   var dprice = $(x).data('dprice');
   var size = $(x).data('size');
   $(`.sizeProduct_price`).html(price);
+  $(`#setaddProductToCart`).attr('data-price',price);
+  $(`#setaddProductToCart`).attr('data-discounted_price',dprice);
+  $(`#setaddProductToCart`).attr('data-size',size);
+
 }
 
 //product add into cart
@@ -38,7 +42,7 @@ function addProductToCart(x){
                 var success_cart_btn =`
                 <a class="add_to_cart" href="cart.php" id="setaddProductToCart" />Checkout</a>`;
 
-                $(`#setaddProductToCart`).parent().attr("onclick", "").html(success_cart_btn);
+                $(`#setaddProductToCart`).attr("onclick", "").html(success_cart_btn);
 
                 //$(`[data-quantitycode=${data}]`).attr('data-cart',"yes");
                 
@@ -287,7 +291,7 @@ $(function() {
             processData: false,
             success: function (data) {
             alert(data);
-            //window.location.href='order.php'
+            window.location.href='/orderconfirm'
             },
           });
         }

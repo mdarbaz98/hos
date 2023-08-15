@@ -66,7 +66,10 @@ include("./include/header.php") ?>
                         </div>
                         <div class="price__part d-flex gap-3">
                         <div class="p__price cross">
-                            INR <?php echo number_format($dprice);?>
+                             <?php if($dprice==0){ ?>   
+                             <?php }else{ ?>
+                                INR <?php echo number_format($dprice);?>
+                            <?php } ?>   
                         </div>
                             <div class="p__price">
                                 INR <?php echo number_format($price);?>
