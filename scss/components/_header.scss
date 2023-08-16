@@ -95,3 +95,21 @@
       }
     }
   }
+
+  #searchResults{
+    display: none;
+    background: #fff;
+    width: 590px;
+    margin: auto;
+    border-radius: 20px;
+    padding-top: 30px;
+    max-height: 450px;
+    overflow-y: scroll;
+  li{
+    list-style: none;
+    margin-bottom: 25px;
+    a{
+      color: #000;
+    }
+}
+  }

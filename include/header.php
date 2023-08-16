@@ -118,7 +118,8 @@ file_put_contents($jsonFilePath, $jsonData);
                                 <img class="logo" src="images/logo.jpg" alt="logo">
                             </div>
                             <div class="input__wrapper">
-                                <input type="text" placeholder="Search House of Sneakers">
+                                <input type="text" id="searchInput" placeholder="Search House of Sneakers">
+                                <ul id="searchResults"></ul>
                                 <p>Hit Enter To See The Results</p>
                             </div>
                             <div class="top__search">
