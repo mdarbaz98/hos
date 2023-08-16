@@ -76,6 +76,7 @@ function getCart() {
         var htmldata = json.datahtml;
         var product_calculation = json.product_calculation;
         var shipping_total_price = json.shipping_total_price;
+        var subtotal_CartPrice = json.subtotal_CartPrice;
         var finalTotal = json.finalTotal;
 
         // var total_saving_amount = json.total_saving_amount;
@@ -83,17 +84,16 @@ function getCart() {
         // console.log(shipping_total_price);
         
         if(shipping_total_price==0){ 
-          var shipping_free=`<span class="success-icon"><i class="fa-solid fa-circle-check"></i></span>FREE`;
-          $(`.total_shipping_amount`).html(shipping_free);
+          $(`.total_shipping_amount`).html("INR "+shipping_total_price);
           }else{
-          $(`.total_shipping_amount`).html("$"+shipping_total_price);
+          $(`.total_shipping_amount`).html("INR "+shipping_total_price);
           }
-
         $(".cart_total_product").html(cart_product_count);
         $(".products__container").html(htmldata);
         $(".product_subtotal").html(product_calculation);
-        $(".product_shipping").html(shipping_total_price);
-        $(".final_total_amount").html(finalTotal);
+        $(".subtotal_CartPrice").html("INR "+subtotal_CartPrice);
+        $(".product_shipping").html("INR "+shipping_total_price);
+        $(".final_total_amount").html("INR "+finalTotal);
         
         // $(".loader-bg").hide();
       },
@@ -292,7 +292,6 @@ $(function() {
             cache: false,
             processData: false,
             success: function (data) {
-            alert(data);
             window.location.href='/orderconfirm'
             },
           });

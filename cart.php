@@ -79,10 +79,10 @@
                             </div>
                             <div class="total_text text-white">
                                     <ul class="pt-5 ps-0"><li class="my-3 d-flex justify-content-between
-    "><span>Shipping Charges</span><span>203$</span></li><li class="my-3 d-flex justify-content-between
-    "><span>Subtotal</span><span>203$</span></li>
+    "><span>Shipping Charges</span><span class="total_shipping_amount">0</span></li><li class="my-3 d-flex justify-content-between
+    "><span>Subtotal</span><span class="subtotal_CartPrice">0</span></li>
                                     <li class="pt-3 border-top border-white my-3 d-flex justify-content-between
-    "><span>Total</span><span>203$</span></li></ul>
+    "><span>Total</span><span class="final_total_amount">0</span></li></ul>
                                 </div>
                         </div>
                         <div class="col-md-6">

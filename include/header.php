@@ -1,4 +1,6 @@
-<?php $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]"; 
+<?php
+session_start();
+$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]"; 
 include('include/database.php');
 $select_stmt1 = $conn->prepare("SELECT product_name, slug FROM product ORDER BY id DESC");
 $select_stmt1->execute();

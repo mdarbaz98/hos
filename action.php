@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('include/database.php');
 $userid = $_COOKIE["userID"];
 if ($_POST['btn'] == 'addToCartproduct') {
@@ -75,8 +76,6 @@ if ($_POST['btn'] == "load_maincart_data") {
                 while($priceTotal=$select_strength_details->fetch(PDO::FETCH_ASSOC)){
                     $totalCartPrice =  $priceTotal['totalPrice'];
                     $shipping_charge =  $priceTotal['shipping'];
-                   
-
                     $finalTotal =$totalCartPrice+$shipping_charge;
                 }
 
@@ -314,6 +313,7 @@ if ($_POST['btn'] == 'addUseraddress') {
     {
         $deleteFromCart = $conn->prepare("DELETE FROM cart WHERE userid=? && wishlist=0");
         $deleteFromCart->execute([$userid]);
+        $_SESSION['orderId'] = $orderId;
     }
     echo "done";
   }
