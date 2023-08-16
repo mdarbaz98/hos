@@ -36,7 +36,7 @@ function displayResults(results) {
         results.forEach(item => {
             const li = document.createElement('li');
             const link = document.createElement('a');
-            link.setAttribute("href", `${item.slug})`)
+            link.setAttribute("href", `${item.slug}`)
             link.textContent = `${item.product_name}`;
             li.appendChild(link)
             searchResults.appendChild(li);
