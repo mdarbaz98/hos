@@ -1,6 +1,11 @@
 <?php $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]"; 
 include('include/database.php');
-
+$select_stmt1 = $conn->prepare("SELECT product_name, slug FROM product ORDER BY id DESC");
+$select_stmt1->execute();
+$phpFileData = $select_stmt1->fetchAll(PDO::FETCH_ASSOC);
+$jsonData = json_encode($phpFileData, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+$jsonFilePath = 'productSearch.json';
+file_put_contents($jsonFilePath, $jsonData);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -119,13 +124,19 @@ include('include/database.php');
                             <div class="top__search">
                                 <p>Or Explore other Popular Categories:</p>
                                 <div class="suggested__list">
+
+                                                <?php
+                $all_category=$conn->prepare("SELECT * FROM categories order by id desc");
+                $all_category->execute();
+                while($row=$all_category->fetch(PDO::FETCH_ASSOC)){ ?>
+                            <div><?php echo $row['cat_name'] ?></div>
+
+                <?php } ?>                                    <!-- <div>JORDAN</div>
                                     <div>JORDAN</div>
                                     <div>JORDAN</div>
                                     <div>JORDAN</div>
                                     <div>JORDAN</div>
-                                    <div>JORDAN</div>
-                                    <div>JORDAN</div>
-                                    <div>JORDAN</div>
+                                    <div>JORDAN</div> -->
                                 </div>
                             </div>
                         </div>
