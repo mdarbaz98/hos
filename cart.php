@@ -77,45 +77,52 @@
                                 </div> -->
                            
                             </div>
+                            <div class="total_text text-white">
+                                    <ul class="pt-5 ps-0"><li class="my-3 d-flex justify-content-between
+    "><span>Shipping Charges</span><span>203$</span></li><li class="my-3 d-flex justify-content-between
+    "><span>Subtotal</span><span>203$</span></li>
+                                    <li class="pt-3 border-top border-white my-3 d-flex justify-content-between
+    "><span>Total</span><span>203$</span></li></ul>
+                                </div>
                         </div>
                         <div class="col-md-6">
                             <div class="shipping__form">
                                 <form name="userOrderplace">
                                 <div class="row">
                                         <div class="col">
-                                            <div class="form-floating mb-3">
+                                            <div class="form-floating mb-5">
                                                 <input type="text" class=" form-control" id="floatingfirst" name="fname" placeholder="First name">
                                                 <label for="floatingfirst">First Name</label>
                                               </div>
                                         </div>
                                         <div class="col">
-                                            <div class="form-floating mb-3">
+                                            <div class="form-floating mb-5">
                                                 <input type="text" class="form-control" id="floatingLast" name="lname" placeholder="Last name">
                                                 <label for="floatingLast">Last Name</label>
                                               </div>
                                         </div>
                                       </div>
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-5">
                                         <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
                                         <label for="floatingInput">Email address</label>
                                       </div>
-                                      <div class="form-floating mb-3">
+                                      <div class="form-floating mb-5">
                                         <input type="tel" class=" form-control" id="floatingZip" placeholder="Zip" name="phone">
                                         <label for="floatingZip">Phone</label>
                                       </div>
-                                      <div class="form-floating mb-3">
+                                      <div class="form-floating mb-5">
                                         <input type="text" class=" form-control" id="floatingAddress" name="address" placeholder="Street Address">
                                         <label for="floatingAddress">Street Address</label>
                                       </div>
-                                      <div class="form-floating mb-3">
+                                      <div class="form-floating mb-5">
                                         <input type="text" class=" form-control" id="floatingCity" placeholder="City" name="city">
                                         <label for="floatingCity">City</label>
                                       </div>
-                                      <div class="form-floating mb-3">
+                                      <div class="form-floating mb-5">
                                         <input type="text" class=" form-control" id="floatingCity" placeholder="State" name="state">
                                         <label for="floatingCity">State</label>
                                       </div>
-                                      <div class="form-floating mb-3">
+                                      <div class="form-floating mb-5">
                                         <input type="text" class=" form-control" id="floatingZip" placeholder="Zip" name="pincode">
                                         <label for="floatingZip">Zip/postal code</label>
                                       </div>

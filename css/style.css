@@ -523,6 +523,10 @@
   background: #fff;
   margin-bottom: 50px;
 }
+.cart__page .shipping__form label.error {
+  bottom: -50px;
+  top: unset;
+}
 @media (max-width: 767px) {
   .cart__page .black__section .page__heading {
     font-size: 35px;
@@ -667,6 +671,24 @@ header .bottom__header ul a {
   line-height: 15px;
   letter-spacing: 0em;
   text-align: left;
+}
+
+#searchResults {
+  display: none;
+  background: #fff;
+  width: 590px;
+  margin: auto;
+  border-radius: 20px;
+  padding-top: 30px;
+  max-height: 450px;
+  overflow-y: scroll;
+}
+#searchResults li {
+  list-style: none;
+  margin-bottom: 25px;
+}
+#searchResults li a {
+  color: #000;
 }
 
 footer {
