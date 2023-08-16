@@ -3,9 +3,11 @@ function getSizeprice(x){
   var dprice = $(x).data('dprice');
   var size = $(x).data('size');
   $(`.sizeProduct_price`).html(price);
+  $(`.show_Selected`).html(size);
   $(`#setaddProductToCart`).attr('data-price',price);
   $(`#setaddProductToCart`).attr('data-discounted_price',dprice);
   $(`#setaddProductToCart`).attr('data-size',size);
+  
 
 }
 

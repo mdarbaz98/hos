@@ -1,5 +1,4 @@
 <?php include("./include/header.php") ?>
-
         <section class="delivery__page">
             <h1>Delivery & Returns</h1>
             <div class="container">
@@ -60,4 +59,4 @@
                 </div>
             </div>
         </section>
-        <?php include("./include/footer.php") ?>
+<?php include("./include/footer.php") ?>

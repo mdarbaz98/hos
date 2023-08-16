@@ -102,7 +102,7 @@ file_put_contents($jsonFilePath, $jsonData);
                 $all_category=$conn->prepare("SELECT * FROM categories order by id desc");
                 $all_category->execute();
                 while($row=$all_category->fetch(PDO::FETCH_ASSOC)){ ?>
-                <li><a href="category/<?php echo $row['cat_slug'] ?>"><?php echo $row['cat_name'] ?></a></li>
+                <li><a href="category.php?cat=<?php echo $row['cat_slug'] ?>"><?php echo $row['cat_name'] ?></a></li>
                 <?php } ?>
             </ul>
         </div>
@@ -129,7 +129,7 @@ file_put_contents($jsonFilePath, $jsonData);
                 $all_category=$conn->prepare("SELECT * FROM categories order by id desc");
                 $all_category->execute();
                 while($row=$all_category->fetch(PDO::FETCH_ASSOC)){ ?>
-                            <div><?php echo $row['cat_name'] ?></div>
+                            <a href="category.php?cat=<?php echo $row['cat_slug']?>" ><p><?php echo $row['cat_name'] ?></p></a>
 
                 <?php } ?>                                    <!-- <div>JORDAN</div>
                                     <div>JORDAN</div>

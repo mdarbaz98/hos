@@ -1,17 +1,47 @@
 RewriteEngine On
-RewriteRule ^/?$ index.php [NC,L]
-RewriteRule ^about/?$ about.php?slug=$1
-RewriteRule ^cart/?$ cart.php?slug=$1
-RewriteRule ^contact/?$ contactus.php?slug=$1
-RewriteRule ^delivery/?$ deliveryandreturns.php?slug=$1
-RewriteRule ^privacy/?$ privacypolicy.php?slug=$1
-RewriteRule ^return/?$ returnandrefund.php?slug=$1
-RewriteRule ^terms/?$ termsandcond.php?slug=$1
-RewriteRule ^orderconfirm/?$ orderconfirm.php?slug=$1
-RewriteRule ^category/([^/\.]+)/?$ category.php?slug=$1 [NC,L]
-RewriteRule ^([^/\.]+)/?$ product.php?slug=$1 [L,QSA]
-# RewriteRule ^category/([^/\.]+)/?$ category.php?cat_slug=$1 [L,QSA]
+RewriteCond %{HTTPS} off
+RewriteRule ^$ index.php [NC,L]
+RewriteRule ^about/?$ about.php [NC,L]
+RewriteRule ^404/?$ 404.php [NC,L]
+RewriteRule ^cart/?$ cart.php [NC,L]
+RewriteRule ^privacy/?$ privacypolicy.php [NC,L]
+RewriteRule ^contact/?$ contactus.php [NC,L]
+RewriteRule ^terms/?$ termsandcond.php [NC,L]
+RewriteRule ^orderconfirm/?$ orderconfirm.php [NC,L]
+RewriteRule ^delivery/?$ deliveryandreturns.php [NC,L]
+
+# RewriteRule ^terms-and-conditions/?$ Termsandconditions.php [NC,L]
+# RewriteRule ^promotion/?$ PromotionalAgreement.php [NC,L]
+# RewriteRule ^author/([^/\.]+)/?$ Authorpage.php?author_slug=$1 [NC,L]
+
+RewriteRule ^([0-9a-zA_Z_-]+)/$ product.php?slug=$1 [NC,L]
+RewriteRule ^([0-9a-zA_Z_-]+)$ product.php?slug=$1 [NC,L]
+RewriteRule ^category/([^/\.]+)/?$ parent_cat.php?cat=$1 [NC,L]
+# RewriteRule ^([^/\.]+)/([^/\.]+)/?$ subcategory.php?parentcat=$1&subcat=$2 [L,QSA]
 
 
 
-# RewriteRule ^([^/\.]+)/?$ shop1.php?productCategory=$1 [L,QSA]
+# RewriteEngine On
+# RewriteRule ^/?$ index.php [NC,L]
+# RewriteRule ^about/?$ about.php?slug=$1
+# RewriteRule ^cart/?$ cart.php?slug=$1
+# RewriteRule ^contact/?$ contactus.php?slug=$1
+# RewriteRule ^delivery/?$ deliveryandreturns.php?slug=$1
+# RewriteRule ^privacy/?$ privacypolicy.php?slug=$1
+# RewriteRule ^return/?$ returnandrefund.php?slug=$1
+# RewriteRule ^terms/?$ termsandcond.php?slug=$1
+# RewriteRule ^orderconfirm/?$ orderconfirm.php?slug=$1
+
+# RewriteRule ^category/([^/\.]+)/?$ category.php?cat=$1 [NC,L]
+
+# RewriteRule ^([0-9a-zA_Z_-]+)/$ product.php?slug=$1 [NC,L]
+# RewriteRule ^([0-9a-zA_Z_-]+)$ product.php?slug=$1 [NC,L]
+
+# # RewriteRule ^cat/([^/\.]+)/?$ category.php?slug=$1 [L,QSA]
+
+# # RewriteRule ^([^/\.]+)/?$ product.php?slug=$1 [L,QSA]
+# # RewriteRule ^category/([^/\.]+)/?$ category.php?cat_slug=$1 [L,QSA]
+
+
+
+# # RewriteRule ^([^/\.]+)/?$ shop1.php?productCategory=$1 [L,QSA]
