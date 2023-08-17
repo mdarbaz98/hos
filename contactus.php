@@ -2,15 +2,18 @@
 <section class="cart__page">
             <div class="black__section">
                 <div class="container">
-                    <p class="page__heading">Shopping Cart</p>
+                    <p class="page__heading">Contact Us</p>
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="tag__line">You have <span class="cart_total_product">0</span> item in your cart</p>
+                            <p class="tag__line">At House of Sneakers, we take immense pride in offering a meticulously curated selection of footwear that reflects our deep love for shoes. Our team of experts ensures that every product we offer is 100% authentic, guaranteeing the highest quality for our valued customers.
+                            </p>
+                            <p class="tag__line">With a profound understanding of shoe and contemporary style trends, we aim to become the ultimate destination for sneaker aficionados. Our friendly and knowledgeable staff is always available to provide expert advice on finding the perfect pair of kicks or simply to chat about the latest sneaker releases and trends.
+                            </p>
                            
                         </div>
                         <div class="col-md-6">
                             <div class="shipping__form">
-                                <form name="userOrderplace">
+                                <form name="contactForm">
                                 <div class="row">
                                         <div class="col">
                                             <div class="form-floating mb-3">
@@ -34,23 +37,12 @@
                                         <label for="floatingZip">Phone</label>
                                       </div>
                                       <div class="form-floating mb-3">
-                                        <input type="text" class=" form-control" id="floatingAddress" name="address" placeholder="Street Address">
-                                        <label for="floatingAddress">Street Address</label>
+                                        <textarea class="form-control p-5" name="message" id="floatingAddress" cols="30" rows="10" placeholder="Enter Your Message">
+                                        </textarea>
+                                        <label for="floatingAddress">Enter Your Message</label>
                                       </div>
-                                      <div class="form-floating mb-3">
-                                        <input type="text" class=" form-control" id="floatingCity" placeholder="City" name="city">
-                                        <label for="floatingCity">City</label>
-                                      </div>
-                                      <div class="form-floating mb-3">
-                                        <input type="text" class=" form-control" id="floatingCity" placeholder="State" name="state">
-                                        <label for="floatingCity">State</label>
-                                      </div>
-                                      <div class="form-floating mb-3">
-                                        <input type="text" class=" form-control" id="floatingZip" placeholder="Zip" name="pincode">
-                                        <label for="floatingZip">Zip/postal code</label>
-                                      </div>
-                                      <input type="hidden" name="btn" value="addUseraddress"/>
-                                      <button class="add_to_cart" type="submit">continue to shopping options</button>
+                                      <input type="hidden" name="btn" value="addUsercontact_details"/>
+                                      <button class="add_to_cart_contact" type="submit">Submit</button>
                                     </div>
                                 </form>
                             </div>

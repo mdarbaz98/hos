@@ -321,6 +321,16 @@ if ($_POST['btn'] == 'addUseraddress') {
 }
 
 
+if ($_POST['btn'] == 'addUsercontact_details') {
+    $fname = test_input($_POST['fname']);
+    $lname = test_input($_POST['lname']);
+    $email = test_input($_POST['email']);
+    $phone = test_input($_POST['phone']);
+    $message = test_input($_POST['message']);
+    $select_stmt2=$conn->prepare("INSERT INTO contact_enq(fname, lname, email, phone, message, status) value(?,?,?,?,?,?)");
+    $select_stmt2->execute([$fname, $lname, $email, $phone, $message, 1]);
+    echo "inserted";
+}
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);

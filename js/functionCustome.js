@@ -298,3 +298,77 @@ $(function() {
         }
   });
 });
+
+// contact form details
+
+$(function() {
+  $("form[name='contactForm']").validate({
+    // Specify validation rules
+    rules: {
+      fname: {
+        minlength: 3,
+                    maxlength: 30,
+                    //pattern: "^[a-zA-Z_]*$",
+                    required: true
+      },
+      lname: {
+        minlength: 3,
+                    maxlength: 30,
+                    //pattern: "^[a-zA-Z_]*$",
+                    required: true
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      phone: {
+        required: true,
+        minlength: 10,
+        maxlength: 10,
+      },
+      message: {
+                    required: true
+      },
+    },
+    // Specify validation error messages
+    messages: {
+      name: {
+        minlength:"min length should be 3",
+        maxlength:"min length should be 30",
+        //pattern: "should be alphabet",
+        required:"Please enter your first name"
+      },
+      lname: {
+        minlength:"min length should be 3",
+        maxlength:"min length should be 30",
+        //pattern: "should be alphabet",
+        required:"Please enter your last name"
+      },
+      email: "Please enter a valid email address",
+      phone: {
+        required: "Please provide a password",
+        minlength: "Your password must be at least 6 characters long"
+      },
+    },
+    submitHandler: function(form) {
+          var formData = new FormData(form);
+          var url = window.location.href;
+          $.ajax({
+            url: "action.php",
+            type: "post",
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function (data) {
+            
+            if(data=='inserted'){
+              alert("Your request has been added our team will contact you soon!");
+              $("form[name='contactForm']").trigger("reset");
+            }
+              //window.location.href='/orderconfirm'
+            },
+          });
+        }
+  });
+});
