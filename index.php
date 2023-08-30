@@ -30,7 +30,7 @@ include("./include/header.php") ?>
                         <?php echo $row['heading_title'] ?>
                     </div>
                     <p><?php echo $row['heading_para'] ?></p>
-                    <button><a class="text-white" href="#1">SHOP NOW</a></button>
+                    <button><a class="text-white" href="<?php echo $row['heading_link'] ?>">SHOP NOW</a></button>
                 </div>
                 <img src="hos-admin/<?php echo $image ?>" alt="<?php echo $image ?>">
             </div>
