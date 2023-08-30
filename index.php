@@ -5,18 +5,37 @@ include("./include/header.php") ?>
 <section class="home__page">
     <div class="banner__section">
         <div class="banner-carousel owl-carousel">
+
+        <?php
+        $product_slider=$conn->prepare("SELECT * FROM home_slider order by id DESC");
+        $product_slider->execute();
+        while ($row = $product_slider->fetch(PDO::FETCH_ASSOC)){
+
+            $stmt_img = $conn->prepare("SELECT * FROM `images` WHERE status=1 AND id=?");
+            $stmt_img->execute([$row['img_id']]);
+            $img_data = $stmt_img->fetchAll(PDO::FETCH_ASSOC);
+            if(!empty($img_data)) {
+                $image = $img_data[0]['path']; 
+                $alt = $img_data[0]['alt'];
+            }else{
+                $image="Not Found";
+                $alt="Not Found";
+                }
+
+        ?>
             <div class="item">
                 <div class="card">
-                    <div class="sub__heading mehtab">BLACK AND WHITE mq</div>
+                    <div class="sub__heading"><?php echo $row['heading_slogan'] ?></div>
                     <div class="heading">
-                        Back in Black( and ofc White)
+                        <?php echo $row['heading_title'] ?>
                     </div>
-                    <p>The original "Black/White" colorway returns, this time in the fully remastered '85
-                        construction.</p>
+                    <p><?php echo $row['heading_para'] ?></p>
                     <button><a class="text-white" href="#1">SHOP NOW</a></button>
                 </div>
-                <img src="images/home/banner1.jpg" alt="">
+                <img src="hos-admin/<?php echo $image ?>" alt="<?php echo $image ?>">
             </div>
+        <?php } ?>
+
         </div>
     </div>
 
