@@ -345,10 +345,11 @@ $("#draft").change(function(){
         cache: false,
         processData: false,
         success: function (data) {
-          if (data == 'inserted') {
-            alert('Category Added Successfully')
-            $('#add_category').trigger('reset')
-          } else {
+            if (data.includes("inserted")) {
+              var id = data.substr(8);
+              window.location.href = "homeslider_updated.php?id="+id+"";
+            }
+           else {
             alert('Some Technical Issue')
           }
         },

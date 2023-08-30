@@ -51,7 +51,9 @@ if($_POST['btn']=='addHomeslider'){
   $img_id = $_POST['img_id'];
   $stmt = $conn->prepare("INSERT INTO home_slider(heading_slogan, heading_title, heading_para, heading_link, img_id, status) VALUES(?,?,?,?,?,?)");
   if($stmt->execute([$slogan, $title, $description, $link, $img_id, 1])){
-    echo "inserted";
+    $last_pro_id = $conn->lastInsertId();
+
+    echo "inserted".$last_pro_id;
   }
 }
 
