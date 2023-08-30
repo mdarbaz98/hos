@@ -10,6 +10,12 @@
                         <li><a href="category_listing.php" key="t-product-detail">Listing</a></li>
                     </ul>
                 </li>
+                <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="bx bx-detail"></i><span key="t-ecommerce">Home Slider</span></a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="add_homeslider.php" key="t-products">Add</a></li>
+                        <li><a href="homeslider_list.php" key="t-product-detail">Listing</a></li>
+                    </ul>
+                </li>
                 <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="bx bx-file"></i><span key="t-ecommerce">Product</span></a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="add_product.php" key="t-products">Add</a></li>

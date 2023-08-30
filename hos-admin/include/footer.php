@@ -323,6 +323,73 @@ $("#draft").change(function(){
     },
   });
 
+  $('#add_homeslider').validate({
+    rules: {
+      slogan: 'required',
+      description: 'required',
+      title: 'required',
+      link: 'required',
+    },
+    message: {
+      cat_name: 'Please enter username',
+      cat_slug: 'Please enter username',
+    },
+    submitHandler: function (form) {
+      // alert("validated");
+
+      $.ajax({
+        url: 'action.php',
+        type: 'post',
+        data: new FormData(form),
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function (data) {
+          if (data == 'inserted') {
+            alert('Category Added Successfully')
+            $('#add_category').trigger('reset')
+          } else {
+            alert('Some Technical Issue')
+          }
+        },
+      })
+    },
+  });
+
+  $('#update_homeslider').validate({
+    rules: {
+      slogan: 'required',
+      description: 'required',
+      title: 'required',
+      link: 'required',
+    },
+    message: {
+      cat_name: 'Please enter username',
+      cat_slug: 'Please enter username',
+    },
+    submitHandler: function (form) {
+      // alert("validated");
+
+      $.ajax({
+        url: 'action.php',
+        type: 'post',
+        data: new FormData(form),
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function (data) {
+          if (data == 'updated') {
+            alert('Home Slider Updated Successfully')
+            location.reload()
+          } else {
+            alert('Some Technical Issue')
+          }
+        },
+      })
+    },
+  });
+
+
   $('#update_Productprice').validate({
     rules: {
       price: 'required',

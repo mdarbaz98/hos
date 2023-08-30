@@ -43,6 +43,35 @@ if($_POST['btn']=='addCategory'){
     echo "inserted";
   }
 }
+if($_POST['btn']=='addHomeslider'){
+  $slogan = $_POST['slogan'];
+  $description = $_POST['description'];
+  $title = $_POST['title'];
+  $link = $_POST['link'];
+  $img_id = $_POST['img_id'];
+  $stmt = $conn->prepare("INSERT INTO home_slider(heading_slogan, heading_title, heading_para, heading_link, img_id, status) VALUES(?,?,?,?,?,?)");
+  if($stmt->execute([$slogan, $title, $description, $link, $img_id, 1])){
+    echo "inserted";
+  }
+}
+
+if($_POST['btn']=='updatehome_slider'){
+  $home_slider_id = $_POST['home_slider_id'];
+  $slogan = $_POST['slogan'];
+  $description = $_POST['description'];
+  $title = $_POST['title'];
+  $link = $_POST['link'];
+  if(empty($_POST['img_id'])){
+    $img_id = $_POST['old_img_id'];
+  }else{
+    $img_id = $_POST['img_id'];
+  }
+  $stmt = $conn->prepare("UPDATE home_slider SET heading_slogan=?, heading_title=?, heading_para=?, heading_link=?, img_id=? WHERE id=?");
+  if($stmt->execute([$slogan, $title, $description, $link, $img_id, $home_slider_id])){
+    echo "updated";
+  }
+}
+
 if($_POST['btn']=='updateCategory'){
   $cat_id = $_POST['cat_id'];
   $cat_name = $_POST['cat_name'];
@@ -58,7 +87,6 @@ if($_POST['btn']=='updateCategory'){
   if($stmt->execute([$img_id, $cat_name, $slug, $desc, $title, $cat_id])){
     echo "updated";
   }
-
 }
 if($_POST['btn']=='deleteCategory_id'){
     $update = $conn->prepare('DELETE FROM categories WHERE id=?');
