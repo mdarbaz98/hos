@@ -52,7 +52,7 @@ if ($_POST['btn'] == "load_maincart_data") {
                                    <div class="left__div">
                                     <img src="hos-admin/'.$pro_img.'" alt="'.$pro_img.'">
                                         <div>
-                                            <p>Adidas T-Shirt</p><span> '.$pro_name.' </span>
+                                            <p>'.$pro_category.'</p><span> '.$pro_name.' </span>
                                         </div>
                                     </div>
                                     <div class="right__div">

@@ -85,15 +85,14 @@
     <div class="container">
       <div class="row mt-5">
         <div class="col-sm-10 m-auto">
-            <form id="form_submit1" class="form">
-            <label class="form__container" id="upload-container">Choose or Drag & Drop Files
-      <input class="form__file" id="upload-files" name="files[]" type="file" accept="image/*" multiple="multiple"/>
-    </label>
-    <div class="form__files-container" id="files-list-container"></div>
-          
-            <button class="btn btn-success" type="submit" >Upload File</button>
-            <input type="hidden" name="btn" value="insert_images"/>
-        </form>
+              <form id="form_submit1" class="form">
+                <label class="form__container" id="upload-container">Choose or Drag & Drop Files
+                  <input class="form__file" id="upload-files" name="files[]" type="file" accept="image/*" multiple="multiple"/>
+                </label>
+                <div class="form__files-container" id="files-list-container"></div>
+                <button class="btn btn-success" type="submit" >Upload File</button>
+                <input type="hidden" name="btn" value="insert_images"/>
+              </form>
         </div>
       </div>
     </div>

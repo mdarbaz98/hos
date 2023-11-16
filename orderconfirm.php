@@ -1,5 +1,5 @@
 <?php 
- include('hos-admin/include/config.php');
+include('hos-admin/include/config.php');
 include("./include/header.php");
 $order_Id = $_SESSION['orderId'];
 ?>
