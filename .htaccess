@@ -7,6 +7,7 @@ RewriteRule ^cart/?$ cart.php [NC,L]
 RewriteRule ^privacy/?$ privacypolicy.php [NC,L]
 RewriteRule ^contact/?$ contactus.php [NC,L]
 RewriteRule ^terms/?$ termsandcond.php [NC,L]
+RewriteRule ^category/?$ categorypage.php [NC,L]
 RewriteRule ^orderconfirm/?$ orderconfirm.php [NC,L]
 RewriteRule ^delivery/?$ deliveryandreturns.php [NC,L]
 
